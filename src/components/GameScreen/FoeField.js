@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import candyFoes from './foesList/candy'
+import waterFoes from './foesList/water'
+import fireFoes from './foesList/fire'
+import slimeFoes from './foesList/slime'
 
 class FoeField extends Component {
 
