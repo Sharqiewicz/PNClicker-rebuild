@@ -1,8 +1,12 @@
 import React from 'react';
+import FoeField from './components/GameScreen/FoeField'
 
 function App() {
+
   return (
-    <div className="App">Loaded...</div>
+    <div className="App">
+      <FoeField/>
+    </div>
   );
 }
 
