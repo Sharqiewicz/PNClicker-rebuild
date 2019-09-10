@@ -1,11 +1,11 @@
 import React from 'react';
-import FoeField from './components/GameScreen/FoeField'
+import GameScreen from './components/GameScreen'
 
 function App() {
 
   return (
     <div className="App">
-      <FoeField/>
+      <GameScreen/>
     </div>
   );
 }
