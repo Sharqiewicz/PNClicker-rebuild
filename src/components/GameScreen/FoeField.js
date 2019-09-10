@@ -14,6 +14,7 @@ class FoeField extends Component {
         document.querySelectorAll('.stat')[0].innerHTML = `Damage: ${biom[foe].damage}`;
         document.querySelectorAll('.stat')[1].innerHTML = `Health: ${biom[foe].health}`;
         document.getElementById('enemy_name').innerHTML = `Name: ${biom[foe].name}`;
+        document.getElementById('enemy_image').innerHTML = `<img src="${biom[foe].img}"/>`;
     }
 
     foeDraw = () => {
@@ -52,9 +53,7 @@ class FoeField extends Component {
                 <div id="enemy_container" className="col-12 d-flex flex-column bg-warning">
                     <div id="enemy_name" className="bg-primary"></div>
                     <div id="enemy_card" className="order-sm-2 order-md-1">
-                        <div id="enemy_image">
-
-                        </div>
+                        <div id="enemy_image"></div>
                     </div>
                     <div id="enemy_stats" className="d-flex justify-content-center flex-wrap order-sm-1 order-md-2">
                         <div className="stat"></div>
