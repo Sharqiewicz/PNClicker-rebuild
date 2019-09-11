@@ -19,3 +19,4 @@
 ## Rebuild Idea
  - Better GIT history and code maintenance
  - Code optimilization
+ - Learn SASS
