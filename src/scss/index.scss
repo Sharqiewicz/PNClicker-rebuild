@@ -1,5 +1,18 @@
 @import './config';
 
 body{
-    color: $candy_light_color;
+    color: black;
+}
+
+#enemy_container{
+    border: 5px solid #333;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#enemy_image{
+    border: 5px solid #333;
 }

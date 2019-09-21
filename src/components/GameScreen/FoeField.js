@@ -14,7 +14,8 @@ class FoeField extends Component {
         document.querySelectorAll('.stat')[0].innerHTML = `Damage: ${biom[foe].damage}`;
         document.querySelectorAll('.stat')[1].innerHTML = `Health: ${biom[foe].health}`;
         document.getElementById('enemy_name').innerHTML = `Name: ${biom[foe].name}`;
-        document.getElementById('enemy_image').innerHTML = `<img src="${biom[foe].img}"/>`;
+        document.getElementById('enemy_image').innerHTML = `<img class="img-fluid" src="${biom[foe].img}"/>`;
+
     }
 
     foeDraw = () => {
@@ -49,13 +50,13 @@ class FoeField extends Component {
     render(){
         return(
             <div className="FoeField">
-                <button className="btn btn-warning" onClick={this.foeDraw}>New Foe</button>
-                <div id="enemy_container" className="col-12 d-flex flex-column bg-warning">
-                    <div id="enemy_name" className="bg-primary"></div>
-                    <div id="enemy_card" className="order-sm-2 order-md-1">
+                <button className="btn" onClick={this.foeDraw}>New Foe</button>
+                <div id="enemy_container" className="offset-1 col-4">
+                    <div id="enemy_card" className="col-12">
                         <div id="enemy_image"></div>
                     </div>
-                    <div id="enemy_stats" className="d-flex justify-content-center flex-wrap order-sm-1 order-md-2">
+                    <div id="enemy_name"></div>
+                    <div id="enemy_stats">
                         <div className="stat"></div>
                         <div className="stat"></div>
                     </div>
