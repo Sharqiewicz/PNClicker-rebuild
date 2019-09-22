@@ -16,6 +16,14 @@ class FoeField extends Component {
         document.getElementById('enemy_name').innerHTML = `Name: ${biom[foe].name}`;
         document.getElementById('enemy_image').innerHTML = `<img class="img-fluid" src="${biom[foe].img}"/>`;
 
+
+        //foe color
+        let foe_color = biom[foe].biomID;
+
+        // to trzeba dać do niższych komponentów ( które będą miały tablice z kolorami )
+        const colors_light = ['#FDA7DF', '#4cd137', '#00a8ff','#e84118'];
+        const colors_dark = ['#D980FA', '#44bd32', '#0097e6','#c23616'];
+
     }
 
     foeDraw = () => {
@@ -41,7 +49,7 @@ class FoeField extends Component {
                 this.redrawFoe(candyFoes, randomEnemy);
                 break;
             default:
-                console.log('default');
+                // no code
                 break;
         }
 
