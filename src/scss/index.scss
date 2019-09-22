@@ -11,8 +11,19 @@ body{
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
+
+    padding: 0;
 }
 
 #enemy_image{
-    border: 5px solid #333;
+    text-align: center;
+    padding: 20px;
+
+    width: 100%;
+    border-bottom: 5px solid #333;
+
+    img{
+        max-width:375px;
+        max-height: 375px;
+    }
 }

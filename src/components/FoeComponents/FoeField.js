@@ -16,25 +16,21 @@ class FoeField extends Component {
         document.getElementById('enemy_name').innerHTML = `Name: ${biom[foe].name}`;
         document.getElementById('enemy_image').innerHTML = `<img class="img-fluid" src="${biom[foe].img}"/>`;
 
-
         //foe color
         let foe_color = biom[foe].biomID;
-
-        // to trzeba dać do niższych komponentów ( które będą miały tablice z kolorami )
         const colors_light = ['#e84118', '#00a8ff', '#4cd137','#FDA7DF'];
         const colors_dark = ['#c23616', '#0097e6', '#44bd32','#D980FA'];
 
-        document.getElementById('enemy_container').style.backgroundColor = colors_light[foe_color];
-        document.getElementById('enemy_container').style.boxShadow = `10px 10px 10px ${colors_dark[foe_color]}`;
+        document.getElementById('enemy_container').style.backgroundColor = colors_dark[foe_color];
+        document.getElementById('enemy_image').style.backgroundColor = colors_light[foe_color];
 
     }
 
     foeDraw = () => {
-        let randomBiom = Math.floor(Math.random() * 4); // then make it random
+        let randomBiom = Math.floor(Math.random() * 4);
         let randomEnemy = 0;
 
         switch(randomBiom){
-            //candy
             case 0:
                 randomEnemy = Math.floor(Math.random() * fireFoes.length);
                 this.redrawFoe(fireFoes ,randomEnemy);
@@ -63,9 +59,7 @@ class FoeField extends Component {
             <div className="FoeField">
                 <button className="btn" onClick={this.foeDraw}>New Foe</button>
                 <div id="enemy_container" className="offset-1 col-4">
-                    <div id="enemy_card" className="col-12">
-                        <div id="enemy_image"></div>
-                    </div>
+                    <div id="enemy_image"></div>
                     <div id="enemy_name"></div>
                     <div id="enemy_stats">
                         <div className="stat"></div>
