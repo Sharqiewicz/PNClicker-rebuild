@@ -21,8 +21,11 @@ class FoeField extends Component {
         let foe_color = biom[foe].biomID;
 
         // to trzeba dać do niższych komponentów ( które będą miały tablice z kolorami )
-        const colors_light = ['#FDA7DF', '#4cd137', '#00a8ff','#e84118'];
-        const colors_dark = ['#D980FA', '#44bd32', '#0097e6','#c23616'];
+        const colors_light = ['#e84118', '#00a8ff', '#4cd137','#FDA7DF'];
+        const colors_dark = ['#c23616', '#0097e6', '#44bd32','#D980FA'];
+
+        document.getElementById('enemy_container').style.backgroundColor = colors_light[foe_color];
+        document.getElementById('enemy_container').style.boxShadow = `10px 10px 10px ${colors_dark[foe_color]}`;
 
     }
 
