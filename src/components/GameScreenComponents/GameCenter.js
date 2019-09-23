@@ -15,7 +15,7 @@ class GameCenter extends Component{
 
         return(
             <div className="col-12 col-md-4 GameCenter">
-                <Onestat name='You' value={this.props.name} />
+                <Onestat name='Name' value={this.props.name} />
                 <div id="charakter-img-icon" className="col-5">
                     <img src={`${this.props.biomicon}`} />
                 </div>

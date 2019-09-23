@@ -153,14 +153,14 @@ body{
 #GameScreen{
     display: flex;
     flex-wrap: wrap;
-
-    background: #111;
 }
 
 .GameCenter{
     height: 100vh;
     background: #222;
     color: #ddd;
+
+    position: relative;
 
     font-size: 24px;
 
@@ -203,6 +203,10 @@ body{
         }
 
     #charakter-img-icon{
+        position: absolute;
+        right: 0;
+        top: 0;
+
         max-width: 80px;
         height: 80px;
         background: $candy_dark_color;
