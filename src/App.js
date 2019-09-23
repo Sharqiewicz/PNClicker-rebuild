@@ -1,6 +1,7 @@
 import React from 'react';
 import GameScreen from './components/GameScreen';
 import WelcomeScreen from './components/WelcomeScreen';
+import MenuScreen from './components/MenuScreen';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
@@ -10,8 +11,9 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Switch>
-          <Route exact path="/" component={WelcomeScreen} />
-          <Route path="/game" component={GameScreen} />
+          <Route exact path="/" component={MenuScreen} />
+          <Route path="/PLAY" component={WelcomeScreen} />
+          <Route path="/GAME" component={GameScreen} />
         </Switch>
       </div>
     </BrowserRouter>
