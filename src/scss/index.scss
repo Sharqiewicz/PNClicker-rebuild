@@ -147,3 +147,16 @@ body{
     }
 
 }
+
+//GameScreen
+
+#GameScreen{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.GameCenter{
+    height: 100vh;
+    background: #222;
+    color: #ddd;
+}

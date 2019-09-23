@@ -56,14 +56,16 @@ class FoeField extends Component {
 
     render(){
         return(
-            <div className="FoeField">
-                <button className="btn" onClick={this.foeDraw}>New Foe</button>
-                <div id="enemy_container" className="offset-1 col-4">
-                    <div id="enemy_image"></div>
-                    <div id="enemy_name"></div>
-                    <div id="enemy_stats">
-                        <div className="stat"></div>
-                        <div className="stat"></div>
+            <div className="col-4">
+                <div className="FoeField">
+                    <button className="btn" onClick={this.foeDraw}>New Foe</button>
+                    <div id="enemy_container">
+                        <div id="enemy_image"></div>
+                        <div id="enemy_name"></div>
+                        <div id="enemy_stats">
+                            <div className="stat"></div>
+                            <div className="stat"></div>
+                        </div>
                     </div>
                 </div>
             </div>
