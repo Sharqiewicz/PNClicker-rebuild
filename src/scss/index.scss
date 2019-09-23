@@ -127,6 +127,7 @@ body{
     .biom_card:hover, .biom_card:hover img{
         opacity: 1;
         cursor:pointer;
+        transform: scale(1.2);
     }
     .biom_card:nth-of-type(1):hover{ filter: drop-shadow(16px 16px 20px #daa); }
     .biom_card:nth-of-type(2):hover{ filter: drop-shadow(16px 16px 20px #aab); }
