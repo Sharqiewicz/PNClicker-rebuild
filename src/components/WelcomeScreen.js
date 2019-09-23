@@ -6,6 +6,7 @@ class WelcomeScreen extends Component {
 
     componentDidMount(){
         this.changeBackground();
+        document.getElementById('WelcomeScreen').style.textShadow = `0.2em 0.2em 0.3em #D980FA`;
     }
 
     constructor(){
@@ -24,8 +25,6 @@ class WelcomeScreen extends Component {
         }, 3000)
 
     }
-
-
 
     newName = (e) => {
         this.setState({
@@ -47,11 +46,11 @@ class WelcomeScreen extends Component {
             <section id="WelcomeScreen">
                 <div className="container">
                     <div className="row">
-                        <h1 className="text-center mb-5">Hey, welcome to the pnClicker game!</h1>
-                        <form onSubmit={this.playGame}>
-                            <label>What is your name?</label>
-                            <input className="ml-5 nameInput" type="text" placeholder="Fin The Human" onChange={this.newName}></input>
-                            <button className="startButton" onClick={this.changeOldName}>PLAY</button>
+                        <h1 className="text-center mb-5 col-12">What is your name traveller?</h1>
+                        <form onSubmit={this.playGame} className="col-12 d-flex justify-content-center align-items-center flex-wrap">
+                            <input className="ml-5 nameInput col-12" type="text" placeholder="Fin The Human" onChange={this.newName}></input>
+                            <div className="w-100"></div>
+                            <button className="startButton col-12" onClick={this.changeOldName}>PLAY</button>
                         </form>
                     </div>
                 </div>
