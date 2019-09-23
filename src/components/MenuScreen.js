@@ -20,8 +20,8 @@ class MenuScreen extends Component{
 
         const optionslist = this.state.options.map( item=> <Option key={item.id} name={item.name} image={item.image} text={item.text} history={this.props.history}/>);
         return(
-            <div>
-                <h1 className="text-center text-white"> PnClicker v0.4</h1>
+            <div id="MenuScreen">
+                <h1 className="text-center text-white col-12"> PnClicker v0.4</h1>
                 <div className="box">
                     {optionslist}
                 </div>

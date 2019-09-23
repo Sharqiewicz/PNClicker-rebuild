@@ -1,43 +1,38 @@
-.App{
+
+#MenuScreen{
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-body{
-    display: flex;
     background: #333;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
 }
-
-.box{
+#MenuScreen .box{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.option{
+#MenuScreen .option{
     cursor: pointer;
     max-width: 400px;
     margin: 20px;
 }
 
-.option-image{
+#MenuScreen .option-image{
     height: 200px;
     transition: 0.5s;
 }
 
-.option-image img{
+#MenuScreen .option-image img{
     width: 150px;
     height: 150px;
 }
 
 
-.option-image.active{
+#MenuScreen .option-image.active{
     position: relative;
     background: #333;
     display: flex;
@@ -48,35 +43,35 @@ body{
     transform:  translateY(100px);
 }
 
-.option:hover .option-image.active{
+#MenuScreen .option:hover .option-image.active{
     background: #D980FA;
     transform:  translateY(0);
 }
 
-.option:hover .option-description{
+#MenuScreen .option:hover .option-description{
     transform:  translateY(0);
 }
 
-.option-image.active .option-icon-section{
+#MenuScreen .option-image.active .option-icon-section{
     opacity: 0.2;
     transition: 0.5s;
 }
 
-.option-image.active .option-icon-section h3{
+#MenuScreen .option-image.active .option-icon-section h3{
     margin: 10px 0 0;
     padding: 0;
     color: #fff;
 }
 
-.option:hover .option-icon-section{
+#MenuScreen .option:hover .option-icon-section{
     opacity: 1;
 }
-.option:hover .option-icon-section img{
+#MenuScreen .option:hover .option-icon-section img{
     width: 140px;
     height: 140px;
 }
 
-.option-description{
+#MenuScreen .option-description{
     background: #fff;
     display: flex;
     justify-content: center;
@@ -88,7 +83,7 @@ body{
     transition: 0.5s;
 }
 
-.option-description p{
+#MenuScreen .option-description p{
     margin: 0;
     padding: 0;
 }

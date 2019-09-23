@@ -3,7 +3,7 @@ import React from 'react';
 function Option (props){
 
     return(
-        <div className="option" onClick={()=>{props.history.push(`/${props.name}`)}}>
+        <div className="option col-12 col-md-3" onClick={()=>{props.history.push(`/${props.name}`)}}>
             <div className="option-image active">
                 <div className="option-icon-section">
                     <img src={props.image} />
