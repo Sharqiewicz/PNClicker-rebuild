@@ -8,7 +8,7 @@ const initState = {
     biomID: 0,
     money: 0,
     level: 1,
-    biomicon: 'none'
+    biomicon: 0
 }
 
 const charakter = (state = initState, action) => {
