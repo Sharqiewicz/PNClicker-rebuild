@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class WelcomeScreen extends Component {
 
     componentDidMount(){
-        this.changeBackground();
+        //this.changeBackground();
         document.getElementById('WelcomeScreen').style.textShadow = `0.2em 0.2em 0.3em #D980FA`;
     }
 
@@ -34,7 +34,7 @@ class WelcomeScreen extends Component {
 
     changeOldName = () => {
         this.props.changeName(this.state.name)
-        this.props.history.push('/start');
+        this.props.history.push('/BIOM');
     }
 
     playGame = (e) => {
