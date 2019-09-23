@@ -4,12 +4,20 @@ import { connect } from 'react-redux';
 import icon from '../../img/icons/fire.png'
 class GameCenter extends Component{
 
+    componentDidMount(){
+        const colors_light = ['#e84118', '#00a8ff', '#4cd137', '#FDA7DF'];
+        const colors_dark = ['#c23616', '#0097e6', '#44bd32', '#D980FA'];
+        document.querySelector('#charakter-img-icon').style.backgroundColor = colors_dark[this.props.biomID];
+    }
+
     render(){
-        console.log(this.props.biomicon);
+
         return(
             <div className="col-4 GameCenter">
-                <h1>{this.props.name}</h1>
-                <img src={`../${this.props.biomicon === 0 ? icon : this.props.biomicon}`}/>
+                <Onestat name='Name' value={this.props.name} />
+                <div id="charakter-img-icon">
+                    <img src={`${this.props.biomicon}`} />
+                </div>
                 <Onestat name='Balance' value={this.props.money}/>
 
             </div>

@@ -1,3 +1,5 @@
+import fireicon from '../img/icons/fire.png'
+
 const initState = {
     name: 'Fin the Human',
     damage: 1,
@@ -8,7 +10,7 @@ const initState = {
     biomID: 0,
     money: 0,
     level: 1,
-    biomicon: 0
+    biomicon: fireicon
 }
 
 const charakter = (state = initState, action) => {

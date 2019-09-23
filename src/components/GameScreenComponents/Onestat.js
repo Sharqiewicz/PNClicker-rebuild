@@ -1,9 +1,10 @@
 import React from 'react';
 
 function Onestat(props){
+
     return(
         <div>
-            <p>{props.name} {props.value}</p>
+            <p>{props.name}: {props.value}</p>
         </div>
     )
 }
