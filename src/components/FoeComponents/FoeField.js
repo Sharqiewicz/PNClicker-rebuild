@@ -18,8 +18,8 @@ class FoeField extends Component {
 
         //foe color
         let foe_color = biom[foe].biomID;
-        const colors_light = ['#e84118', '#00a8ff', '#4cd137','#FDA7DF'];
-        const colors_dark = ['#c23616', '#0097e6', '#44bd32','#D980FA'];
+        const colors_light = ['#e84118', '#00a8ff', '#4cd137', '#f8a5c2'];
+        const colors_dark = ['#c23616', '#0097e6', '#44bd32', '#f78fb3'];
 
         document.getElementById('enemy_container').style.backgroundColor = colors_dark[foe_color];
         document.getElementById('enemy_image').style.backgroundColor = colors_light[foe_color];

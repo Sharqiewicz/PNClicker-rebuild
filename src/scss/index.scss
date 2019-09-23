@@ -153,6 +153,8 @@ body{
 #GameScreen{
     display: flex;
     flex-wrap: wrap;
+
+    background: #111;
 }
 
 .GameCenter{
@@ -183,10 +185,20 @@ body{
                 display:flex;
                 justify-content: center;
                 align-items: center;
+                border-radius: 50%;
+                color: #ddd;
+
+
 
                 &:hover{
                     cursor: pointer;
                 }
+            }
+
+            .stats{
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
             }
         }
 
