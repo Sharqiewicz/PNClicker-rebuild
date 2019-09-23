@@ -18,8 +18,8 @@ class FoeField extends Component {
 
         //foe color
         let foe_color = biom[foe].biomID;
-        const colors_light = ['#e84118', '#00a8ff', '#4cd137','#FDA7DF'];
-        const colors_dark = ['#c23616', '#0097e6', '#44bd32','#D980FA'];
+        const colors_light = ['#e84118', '#00a8ff', '#4cd137', '#f8a5c2'];
+        const colors_dark = ['#c23616', '#0097e6', '#44bd32', '#f78fb3'];
 
         document.getElementById('enemy_container').style.backgroundColor = colors_dark[foe_color];
         document.getElementById('enemy_image').style.backgroundColor = colors_light[foe_color];
@@ -56,14 +56,16 @@ class FoeField extends Component {
 
     render(){
         return(
-            <div className="FoeField">
-                <button className="btn" onClick={this.foeDraw}>New Foe</button>
-                <div id="enemy_container" className="offset-1 col-4">
-                    <div id="enemy_image"></div>
-                    <div id="enemy_name"></div>
-                    <div id="enemy_stats">
-                        <div className="stat"></div>
-                        <div className="stat"></div>
+            <div className="col-4">
+                <div className="FoeField">
+                    <button className="btn" onClick={this.foeDraw}>New Foe</button>
+                    <div id="enemy_container">
+                        <div id="enemy_image"></div>
+                        <div id="enemy_name"></div>
+                        <div id="enemy_stats">
+                            <div className="stat"></div>
+                            <div className="stat"></div>
+                        </div>
                     </div>
                 </div>
             </div>

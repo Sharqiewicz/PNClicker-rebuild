@@ -1,3 +1,5 @@
+import fireicon from '../img/icons/fire.png'
+
 const initState = {
     name: 'Fin the Human',
     damage: 1,
@@ -7,7 +9,8 @@ const initState = {
     vulnerabilities: 'none',
     biomID: 0,
     money: 0,
-    level: 1
+    level: 1,
+    biomicon: fireicon
 }
 
 const charakter = (state = initState, action) => {
@@ -23,7 +26,7 @@ const charakter = (state = initState, action) => {
     if (action.type == 'CHARAKTER_BIOM') {
         return {
             ...state,
-            ...state[0], biomID: action.charakterbiom
+            ...state, biomID: action.biomID, biomicon: action.biomicon
         }
     }
 

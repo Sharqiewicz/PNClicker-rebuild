@@ -1,5 +1,4 @@
-/*  TO REPAIR */
-/* CARDS HAVE ON ALL ELEMENTS ID! */
+// Można rozdzielić na mniejsze komponenty!
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -25,7 +24,9 @@ class BiomScreen extends Component {
     }
 
     playGame = (e) => {
-        this.props.playGame(e.target.id)
+        let biomicons = [ fireicon, watericon, slimeicon, candyicon];
+        let biomimg = biomicons[e.target.id];
+        this.props.playGame(e.target.id, biomimg);
         this.props.history.push('/GAME');
     }
 
@@ -61,14 +62,14 @@ class BiomScreen extends Component {
 
 const mapStateToProps = (props) => {
     return {
-        charakter: props.charakter,
-        bioms: props.bioms
+        biomID: props.biomID,
+        biomicon: props.biomicon
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        playGame: (biom) => { dispatch({ type: 'CHARAKTER_BIOM', charakterbiom: biom }) }
+        playGame: (biom, biomicon) => { dispatch({ type: 'CHARAKTER_BIOM', biomID: biom, biomicon: biomicon }) }
     }
 }
 
