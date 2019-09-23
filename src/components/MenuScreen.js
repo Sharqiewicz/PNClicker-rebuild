@@ -3,58 +3,25 @@ import playbutton from '../img/icons/playbuttonwhite.png';
 import openbook from '../img/icons/openbookwhite.png';
 import settingsgears from '../img/icons/settingsgearswhite.png';
 import '../css/menuscreen.css';
+import Option from './MenuCoponents/Option';
 
 class MenuScreen extends Component{
 
+    constructor(){
+        super();
+        this.state = {
+            options : [ { id: 0, name: 'PLAY', image: playbutton, text: 'Begin your adventure! Choose one of four bioms and conquer the pnClicker world!'},
+                        { id: 1, name: 'OPTIONS', image: settingsgears},
+                        { id: 2, name: 'INSTRUCTIONS', image: openbook} ]
+        }
+    }
+
     render(){
 
+        const optionslist = this.state.options.map( item=> <Option key={item.id} name={item.name} image={item.image} text={item.text}/>);
         return(
-            <div className="container">
-
-
-                <div className="option">
-                    <div className="option-image active">
-                        <div className="option-icon-section">
-                            <img src={playbutton}/>
-                                <h3>PLAY</h3>
-                        </div>
-                    </div>
-                    <div className="option-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Sed unde, mollitia molestiae quia quibusdam aut architecto quis ipsum velit fuga sapiente,
-                          deserunt esse reiciendis repellendus atque? Magni reprehenderit assumenda similique.
-                    </div>
-                </div>
-
-                <div className="option">
-                    <div className="option-image active">
-                        <div className="option-icon-section">
-                            <img src={settingsgears} />
-                            <h3>SETTINGS</h3>
-                        </div>
-                    </div>
-                    <div className="option-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Sed unde, mollitia molestiae quia quibusdam aut architecto quis ipsum velit fuga sapiente,
-                          deserunt esse reiciendis repellendus atque? Magni reprehenderit assumenda similique.
-                    </div>
-                </div>
-
-                <div className="option">
-                    <div className="option-image active">
-                        <div className="option-icon-section">
-                            <img src={openbook} />
-                            <h3>INSTRUCTIONS</h3>
-                        </div>
-                    </div>
-                    <div className="option-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Sed unde, mollitia molestiae quia quibusdam aut architecto quis ipsum velit fuga sapiente,
-                          deserunt esse reiciendis repellendus atque? Magni reprehenderit assumenda similique.
-                    </div>
-                </div>
-
-
+            <div className="box">
+                {optionslist}
             </div>
         )
     }

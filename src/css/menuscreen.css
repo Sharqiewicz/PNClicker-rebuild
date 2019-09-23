@@ -1,3 +1,11 @@
+.App{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body{
     display: flex;
     background: #333;
@@ -5,9 +13,14 @@ body{
     justify-content: center;
 }
 
-.container{
+.box{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.option{
+    cursor: pointer;
 }
 
 .option-image{
@@ -55,7 +68,7 @@ body{
 .option:hover .option-icon-section{
     opacity: 1;
 }
-.option-image.active:hover .option-icon-section img{
+.option:hover .option-icon-section img{
     width: 140px;
     height: 140px;
 }
