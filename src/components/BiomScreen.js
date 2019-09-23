@@ -37,19 +37,19 @@ class BiomScreen extends Component {
 
                         <h1 className="col-12 text-white" id="your_biom">Choose your Biom</h1>
 
-                        <div className="biom_card col-sm-12 col-xl-3" id="0" onMouseOver={this.changeDescription} onClick={this.playGame}>
+                        <div className="biom_card col-sm-12 col-xl-2" id="0" onMouseOver={this.changeDescription} onClick={this.playGame}>
                             <div id="0"><img src={fireicon} id="0"/></div>
                         </div>
 
-                        <div className="biom_card col-sm-12 col-xl-3" id="1" onMouseOver={this.changeDescription} onClick={this.playGame}>
+                        <div className="biom_card col-sm-12 col-xl-2" id="1" onMouseOver={this.changeDescription} onClick={this.playGame}>
                             <div id="1"><img src={watericon} id="1"/></div>
                         </div>
 
-                        <div className="biom_card col-sm-12 col-xl-3" id="2" onMouseOver={this.changeDescription} onClick={this.playGame}>
+                        <div className="biom_card col-sm-12 col-xl-2" id="2" onMouseOver={this.changeDescription} onClick={this.playGame}>
                             <div id="2"><img src={slimeicon} id="2"/></div>
                         </div>
 
-                        <div className="biom_card col-sm-12 col-xl-3" id="3" onMouseOver={this.changeDescription} onClick={this.playGame}>
+                        <div className="biom_card col-sm-12 col-xl-2" id="3" onMouseOver={this.changeDescription} onClick={this.playGame}>
                             <div id="3"><img src={candyicon} id="3"/></div>
                         </div>
 

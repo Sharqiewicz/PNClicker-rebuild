@@ -109,14 +109,22 @@ body{
         border: 4px solid #444;
         border-radius: 25px;
         opacity: 0.7;
-        transition: 0.3s;
         padding: 50px 0;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align:center;
+        transition: 0.5s;
+        margin: 50px;
+
+        img{
+            transition: 0.5s;
+            opacity: 0.7;
+            max-width: 200px;
+            padding: 50px;
+        }
     }
-    .biom_card:hover{
+    .biom_card:hover, .biom_card:hover img{
         opacity: 1;
         cursor:pointer;
     }
@@ -129,11 +137,6 @@ body{
     .biom_card:nth-of-type(2){ background-color: #aab;}
     .biom_card:nth-of-type(3){ background-color: #abb;}
     .biom_card:nth-of-type(4){ background-color: #bab; }
-
-
-    .biom_card img{
-        max-width: 100%;
-    }
 
     .biom_desc{
         margin: 80px auto 0 auto;
