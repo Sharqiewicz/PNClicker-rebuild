@@ -160,15 +160,47 @@ body{
     background: #222;
     color: #ddd;
 
+    font-size: 24px;
+
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        .addstat, .onestat{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            max-height: 80px;
+            margin: 20px;
+            vertical-align: middle;
+        }
+        .addstat{
+            justify-content: space-between;
+
+            & .btn{
+                height: 50px;
+                width: 50px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+
     #charakter-img-icon{
-        width: 80px;
+        max-width: 80px;
         height: 80px;
         background: $candy_dark_color;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align:center;
+        margin: 20px;
         border-radius: 50%;
+        border: 4px solid black;
         img{
         max-width: 50px;
     }

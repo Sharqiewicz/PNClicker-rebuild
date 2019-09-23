@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Onestat from './Onestat';
+import AddStat from './AddStat';
 import { connect } from 'react-redux';
 import icon from '../../img/icons/fire.png'
 class GameCenter extends Component{
@@ -15,10 +16,11 @@ class GameCenter extends Component{
         return(
             <div className="col-4 GameCenter">
                 <Onestat name='Name' value={this.props.name} />
-                <div id="charakter-img-icon">
+                <div id="charakter-img-icon" className="col-5">
                     <img src={`${this.props.biomicon}`} />
                 </div>
                 <Onestat name='Balance' value={this.props.money}/>
+                <AddStat name='Damage' value={this.props.damage}/>
 
             </div>
         )
