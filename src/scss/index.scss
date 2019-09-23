@@ -28,3 +28,16 @@ body{
     }
 }
 
+#WelcomeScreen{
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #111;
+    color: #ddd;
+
+    transition: 1s;
+}
+
