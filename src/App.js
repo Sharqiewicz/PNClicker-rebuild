@@ -12,8 +12,8 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/" component={MenuScreen} />
-          <Route path="/welcome" component={WelcomeScreen} />
-          <Route path="/game" component={GameScreen} />
+          <Route path="/PLAY" component={WelcomeScreen} />
+          <Route path="/GAME" component={GameScreen} />
         </Switch>
       </div>
     </BrowserRouter>

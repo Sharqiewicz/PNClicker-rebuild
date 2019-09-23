@@ -17,10 +17,13 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .option{
     cursor: pointer;
+    max-width: 400px;
+    margin: 20px;
 }
 
 .option-image{
