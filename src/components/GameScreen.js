@@ -1,10 +1,14 @@
 import React, {Component} from 'react'
 import FoeField from './FoeComponents/FoeField'
 import GameCenter from './GameScreenComponents/GameCenter';
+import CharakterField from './GameScreenComponents/CharakterField';
 import { connect } from 'react-redux';
 
 
 class GameScreen extends Component{
+
+
+    // Attack function
 
     componentDidMount(){
         const bg_color = ['#daa', '#aab', '#abb', '#bab'];
@@ -15,6 +19,7 @@ class GameScreen extends Component{
        return (
            <div id="GameScreen">
                <GameCenter />
+               <CharakterField/>
                <FoeField />
            </div>
 

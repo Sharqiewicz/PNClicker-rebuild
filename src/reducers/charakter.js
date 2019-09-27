@@ -1,4 +1,5 @@
 import fireicon from '../img/icons/fire.png'
+import charakterimg from '../img/jake.png'
 
 const initState = {
     name: 'Fin the Human',
@@ -10,7 +11,8 @@ const initState = {
     biomID: 0,
     money: 0,
     level: 1,
-    biomicon: fireicon
+    biomicon: fireicon,
+    charakterimg: charakterimg
 }
 
 const charakter = (state = initState, action) => {
@@ -20,6 +22,26 @@ const charakter = (state = initState, action) => {
         return {
            ...state,
            ...state[0], name
+        }
+    }
+
+    if(action.type == 'CHANGE_STAT'){
+        let value = action.value;
+        let [actionstat] = [action.actionstat.toLowerCase()];
+        let number = action.number;
+        if( value === 1 ){
+            let many = state[actionstat] + number;
+            return{
+                ...state,
+                ...state, [actionstat]: many
+            }
+        }
+        if (value === 2) {
+            let many = state[actionstat] - number;
+            return {
+                ...state,
+                ...state, [actionstat]: many
+            }
         }
     }
 
