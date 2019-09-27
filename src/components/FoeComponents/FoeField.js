@@ -18,8 +18,30 @@ class FoeField extends Component {
 
         console.log(this.state.actualfoe);
 
+        let endgame = this.props.health - this.state.actualfoe.damage;
+
+        // send - health to reducer
+        // take dmg from reducer and - foe health
+        // send money to reducer
+
+        // enemy health
+        if (this.state.actualfoe.health <= 0){
+            this.foeDraw();
+        }
+
+        this.setState((state = this.state) => {
+
+            let newhealth = this.state.actualfoe.health -= this.props.damage;
+            return {
+                ...state, health: newhealth
+            }
+        })
+
+        // end enemy health //
+
+
         //end game
-        if (this.props.health <= 0) {
+        if (endgame <= 0) {
             window.alert('YOU DIED');
             this.props.history.push('/');
             window.location.reload();
@@ -52,8 +74,8 @@ class FoeField extends Component {
             }
         });
 
-        document.querySelectorAll('.stat')[0].innerHTML = `Damage: ${biom[foe].damage}`;
-        document.querySelectorAll('.stat')[1].innerHTML = `Health: ${biom[foe].health}`;
+        //document.querySelectorAll('.stat')[0].innerHTML = `Damage: ${biom[foe].damage}`;
+        //document.querySelectorAll('.stat')[1].innerHTML = `Health: ${biom[foe].health}`;
         document.getElementById('enemy_name').innerHTML = `Name: ${biom[foe].name}`;
         document.getElementById('enemy_image').innerHTML = `<img class="img-fluid" src="${biom[foe].img}"/>`;
 
@@ -111,8 +133,8 @@ class FoeField extends Component {
                         <div id="attack_button" onClick={this.attack}>ATTACK</div>
                         <div id="enemy_name"></div>
                         <div id="enemy_stats">
-                            <div className="stat"></div>
-                            <div className="stat"></div>
+                            <div className="stat"> Damage: {this.state.actualfoe.damage}</div>
+                            <div className="stat"> Health {this.state.actualfoe.health}</div>
                         </div>
                     </div>
                 </div>
@@ -125,7 +147,7 @@ const mapStateToProps = (props) => {
     return {
         biomID: props.biomID,
         damage: props.damage,
-        health: props.health
+        health: props.health,
     }
 }
 
