@@ -14,11 +14,16 @@ class CharakterField extends Component {
 
     render() {
         return (
-            <div className="col-4">
+            <div className="col-4 my-auto">
                 <div className="CharakterField">
                     <div id="charakter_container">
                         <div id="charakter_image"></div>
+                        <div className=" d-flex  flex-column justify-content-center align-items-center">
+                            <div className="btn btn-primary m-3">Magic Attack</div>
+                            <div className="btn btn-success m-3">Basic Attack</div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         )

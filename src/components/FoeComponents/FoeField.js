@@ -3,6 +3,7 @@ import candyFoes from './foesList/candy'
 import waterFoes from './foesList/water'
 import fireFoes from './foesList/fire'
 import slimeFoes from './foesList/slime'
+import { connect } from 'react-redux';
 
 class FoeField extends Component {
 
@@ -28,6 +29,12 @@ class FoeField extends Component {
 
     foeDraw = () => {
         let randomBiom = Math.floor(Math.random() * 4);
+
+        console.log(this.props.biomID);
+        console.log(randomBiom);
+
+        if(randomBiom === this.props.biomID){ return this.foeDraw() }
+
         let randomEnemy = 0;
 
         switch(randomBiom){
@@ -56,7 +63,7 @@ class FoeField extends Component {
 
     render(){
         return(
-            <div className="col-4">
+            <div className="col-4 my-auto">
                 <div className="FoeField">
                     <button className="btn" onClick={this.foeDraw}>New Foe</button>
                     <div id="enemy_container">
@@ -72,4 +79,11 @@ class FoeField extends Component {
         )};
 }
 
-export default FoeField;
+
+const mapStateToProps = (props) => {
+    return {
+        biomID: props.biomID
+    }
+}
+
+export default connect(mapStateToProps)(FoeField);
