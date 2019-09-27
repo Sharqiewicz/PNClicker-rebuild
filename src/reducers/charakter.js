@@ -23,6 +23,26 @@ const charakter = (state = initState, action) => {
         }
     }
 
+    if(action.type == 'CHANGE_STAT'){
+        let value = action.value;
+        let [actionstat] = [action.actionstat.toLowerCase()];
+        let number = action.number;
+        if( value === 1 ){
+            let many = state[actionstat] + number;
+            return{
+                ...state,
+                ...state, [actionstat]: many
+            }
+        }
+        if (value === 2) {
+            let many = state[actionstat] - number;
+            return {
+                ...state,
+                ...state, [actionstat]: many
+            }
+        }
+    }
+
     if (action.type == 'CHARAKTER_BIOM') {
         return {
             ...state,

@@ -12,6 +12,11 @@ class GameCenter extends Component{
         document.querySelector('#charakter-img-icon').style.backgroundColor = colors_dark[this.props.biomID];
     }
 
+    statfunc = (actionstat, value, number) => {
+        this.props.changestatistic(actionstat, value, number);
+    }
+
+
     render(){
 
         return(
@@ -20,11 +25,11 @@ class GameCenter extends Component{
                 <div id="charakter-img-icon" className="col-5">
                     <img src={`${this.props.biomicon}`} />
                 </div>
-                <Onestat name='Balance' value={this.props.money}/>
-                <AddStat name='Level' value={this.props.level} />
-                <AddStat name='Damage' value={this.props.damage}/>
-                <AddStat name='Health' value={this.props.health}/>
-                <AddStat name='Steal' value={this.props.steal}/>
+                <Onestat name='Balance' value={this.props.money} stat={this.statfunc}/>
+                <AddStat name='Level' value={this.props.level} stat={this.statfunc}/>
+                <AddStat name='Damage' value={this.props.damage} stat={this.statfunc}/>
+                <AddStat name='Health' value={this.props.health} stat={this.statfunc}/>
+                <AddStat name='Steal' value={this.props.steal} stat={this.statfunc}/>
             </div>
         )
     }
@@ -45,4 +50,10 @@ const mapStateToProps = (props) => {
     }
 }
 
-export default connect(mapStateToProps)(GameCenter);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changestatistic: (actionstat, value, number) => { dispatch({ type: 'CHANGE_STAT', actionstat: actionstat, value: value, number: number }) }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GameCenter);
