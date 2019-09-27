@@ -30,9 +30,6 @@ class FoeField extends Component {
     foeDraw = () => {
         let randomBiom = Math.floor(Math.random() * 4);
 
-        console.log(this.props.biomID);
-        console.log(randomBiom);
-
         if(randomBiom === this.props.biomID){ return this.foeDraw() }
 
         let randomEnemy = 0;
