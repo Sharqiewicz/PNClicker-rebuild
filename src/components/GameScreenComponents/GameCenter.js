@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import Onestat from './Onestat';
 import AddStat from './AddStat';
 import { connect } from 'react-redux';
-import icon from '../../img/icons/fire.png'
+import icon from '../../img/icons/fire.png';
+
 class GameCenter extends Component{
 
     componentDidMount(){

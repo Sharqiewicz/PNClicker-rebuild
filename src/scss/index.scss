@@ -4,7 +4,7 @@ body{
     color: black;
 }
 
-#enemy_container{
+#charakter_container, #enemy_container{
     border: 5px solid #333;
     display:flex;
     justify-content: center;
@@ -15,7 +15,7 @@ body{
     padding: 0;
 }
 
-#enemy_image{
+#charakter_image, #enemy_image{
     text-align: center;
     padding: 20px;
 
