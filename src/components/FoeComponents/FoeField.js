@@ -7,11 +7,51 @@ import { connect } from 'react-redux';
 
 class FoeField extends Component {
 
+    constructor(){
+        super();
+        this.state = {
+            actualfoe: 0,
+        }
+    }
+
+    attack = () =>{
+
+        console.log(this.state.actualfoe);
+
+        //end game
+        if (this.props.health <= 0) {
+            window.alert('YOU DIED');
+            this.props.history.push('/');
+            window.location.reload();
+        }
+    }
+
+        /*this.props.charakter[0].health -= this.props.foes[this.props.variables[0].foeID].damage;
+        this.props.foes[this.props.variables[0].foeID].health -= this.props.charakter[0].damage;
+        document.getElementById('player_stats').getElementsByClassName('stat')[1].getElementsByTagName('p')[0].innerHTML = `Health: ${this.props.charakter[0].health}`;
+        document.getElementById('enemy_stats').getElementsByClassName('stat')[1].innerHTML = `<p>Health: ${this.props.foes[this.props.variables[0].foeID].health}</p> `;
+
+
+        //new Enemy
+        if([this.props.variables[0].foeID].health <= 0) {
+        this.props.foes[this.props.variables[0].foeID].health = this.props.foes[this.props.variables[0].foeID].starthealth;
+        this.newEnemy()
+
+        }*/
+
+
     componentDidMount = () => {
         this.foeDraw();
     }
 
     redrawFoe = (biom ,foe) => {
+
+        this.setState(() => {
+            return{
+                actualfoe: biom[foe]
+            }
+        });
+
         document.querySelectorAll('.stat')[0].innerHTML = `Damage: ${biom[foe].damage}`;
         document.querySelectorAll('.stat')[1].innerHTML = `Health: ${biom[foe].health}`;
         document.getElementById('enemy_name').innerHTML = `Name: ${biom[foe].name}`;
@@ -65,6 +105,7 @@ class FoeField extends Component {
                     <button className="btn" onClick={this.foeDraw}>New Foe</button>
                     <div id="enemy_container">
                         <div id="enemy_image"></div>
+                        <div id="attack_button" onClick={this.attack}>ATTACK</div>
                         <div id="enemy_name"></div>
                         <div id="enemy_stats">
                             <div className="stat"></div>
@@ -79,8 +120,16 @@ class FoeField extends Component {
 
 const mapStateToProps = (props) => {
     return {
-        biomID: props.biomID
+        biomID: props.biomID,
+        damage: props.damage,
+        health: props.health
     }
 }
 
-export default connect(mapStateToProps)(FoeField);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        attack: () => { dispatch({ type: 'ATTACK', }) }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FoeField);

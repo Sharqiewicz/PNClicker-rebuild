@@ -32,12 +32,16 @@ body{
     border-bottom: 0;
 }
 
+#attack_button{
+    display: none;
+}
+
 #enemy_container:hover{
     cursor: pointer;
 
-    &::after{
+    #attack_button{
+        display: block;
         position: absolute;
-        content: " ATTACK ";
         top:50%; left:50%;
         transform: translate(-50%, -50%);
         padding: 25px;
@@ -45,7 +49,6 @@ body{
         background: #1a1;
         border-radius: 25px;
         text-align: center;
-        vertical-align: middle;
         z-index: 999;
         animation: show 0.5s ease-in-out;
         animation-fill-mode: both;
