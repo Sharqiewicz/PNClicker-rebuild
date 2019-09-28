@@ -40,10 +40,15 @@ const charakter = (state = initState, action) => {
         if( value === 1 ){
             let many = state[actionstat] + number;
             let money = action.actionstat.toLowerCase() == 'health' ? state.money - 1 : state.money - state[actionstat];
-            return{
-                ...state,
-                ...state, [actionstat]: many, money
+
+            if (money < 0) { return { ...state }}
+            else {
+                return {
+                    ...state,
+                    ...state, [actionstat]: many, money
+                }
             }
+
         }
         if (value === 2) {
             let many = state[actionstat] - number;

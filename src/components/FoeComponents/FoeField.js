@@ -103,7 +103,6 @@ class FoeField extends Component {
         return(
             <div className="col-4 my-auto">
                 <div className="FoeField">
-                    <button className="btn" onClick={this.foeDraw}>New Foe</button>
                     <div id="enemy_container">
                         <div id="enemy_image"><img src={this.state.actualfoe.img}/></div>
                         <div id="attack_button" onClick={this.attack}>ATTACK</div>

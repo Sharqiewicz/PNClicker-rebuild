@@ -13,13 +13,7 @@ class GameCenter extends Component{
     }
 
     statfunc = (actionstat, value, number) => {
-        if(this.props.money>0){
-            this.props.changestatistic(actionstat, value, number);
-        }
-        else{
-            return;
-        }
-
+        this.props.changestatistic(actionstat, value, number);
     }
 
 
