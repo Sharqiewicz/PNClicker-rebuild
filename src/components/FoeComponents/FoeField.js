@@ -71,7 +71,7 @@ class FoeField extends Component {
     foeDraw = () => {
         let randomBiom = Math.floor(Math.random() * 4);
 
-        if(randomBiom == this.props.biomID){ return this.foeDraw() }
+        if(randomBiom == this.props.charakter.biomID){ return this.foeDraw() }
 
         let randomEnemy = 0;
 
