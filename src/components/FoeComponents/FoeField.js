@@ -10,41 +10,35 @@ class FoeField extends Component {
     constructor(){
         super();
         this.state = {
-            actualfoe: 0,
+            actualfoe: {}
         }
     }
 
     attack = () =>{
 
         let endgame = this.props.health - this.state.actualfoe.damage;
-
-        // take dmg from reducer and - foe health
-        // send money to reducer
-
-        this.props.attack(this.state.actualfoe.damage);
-
-        // enemy health
-        if (this.state.actualfoe.health <= 1){
-            this.foeDraw();
-        }
-
-        this.setState((state = this.state) => {
-
-            let newhealth = this.state.actualfoe.health -= this.props.damage;
-            return {
-                ...state, health: newhealth
-            }
-        })
-
-        // end enemy health //
-
-
-        //end game
         if (endgame <= 0) {
             window.alert('YOU DIED');
             this.props.history.push('/');
             window.location.reload();
         }
+
+        // send attack action to reducer
+        this.props.attack(this.state.actualfoe.damage);
+
+
+        // enemy attack stuff in this.state
+        let newhealth = this.state.actualfoe.health -= this.props.charakter.damage;
+        if (newhealth <= 0) {
+            this.foeDraw();
+        }
+
+        this.setState((state = this.state.actualfoe) => {
+            return {
+                ...state, health: newhealth
+            }
+        })
+
     }
 
 
@@ -59,6 +53,7 @@ class FoeField extends Component {
 
         this.setState(() => {
             return{
+                ...this.state,
                 actualfoe: enemy
             }
         });
@@ -126,9 +121,11 @@ class FoeField extends Component {
 
 const mapStateToProps = (props) => {
     return {
-        biomID: props.biomID,
-        damage: props.damage,
-        health: props.health,
+        charakter: {
+            biomID: props.biomID,
+            damage: props.damage,
+            health: props.health,
+        }
     }
 }
 

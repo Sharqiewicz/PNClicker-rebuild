@@ -21,7 +21,7 @@ const charakter = (state = initState, action) => {
         let damage = action.damage;
         return {
             ...state,
-            ...state[0], damage, money: state.money + state.damage + state.steal, health: state.health - damage
+            ...state[0], money: state.money + state.damage + state.steal, health: state.health - damage
         }
     }
 
