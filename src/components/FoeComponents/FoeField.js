@@ -10,56 +10,36 @@ class FoeField extends Component {
     constructor(){
         super();
         this.state = {
-            actualfoe: 0,
+            actualfoe: {}
         }
     }
 
     attack = () =>{
 
-        console.log(this.state.actualfoe);
-
-        let endgame = this.props.health - this.state.actualfoe.damage;
-
-        // send - health to reducer
-        // take dmg from reducer and - foe health
-        // send money to reducer
-
-        // enemy health
-        if (this.state.actualfoe.health <= 0){
-            this.foeDraw();
-        }
-
-        this.setState((state = this.state) => {
-
-            let newhealth = this.state.actualfoe.health -= this.props.damage;
-            return {
-                ...state, health: newhealth
-            }
-        })
-
-        // end enemy health //
-
-
-        //end game
+        let endgame = this.props.charakter.health - this.state.actualfoe.damage;
         if (endgame <= 0) {
             window.alert('YOU DIED');
             this.props.history.push('/');
             window.location.reload();
         }
+
+        // send attack action to reducer
+        this.props.attack(this.state.actualfoe.damage);
+
+
+        // enemy attack stuff in this.state
+        let newhealth = this.state.actualfoe.health -= this.props.charakter.damage;
+        if (newhealth <= 0) {
+            this.foeDraw();
+        }
+
+        this.setState((state = this.state.actualfoe) => {
+            return {
+                ...state, health: newhealth
+            }
+        })
+
     }
-
-        /*this.props.charakter[0].health -= this.props.foes[this.props.variables[0].foeID].damage;
-        this.props.foes[this.props.variables[0].foeID].health -= this.props.charakter[0].damage;
-        document.getElementById('player_stats').getElementsByClassName('stat')[1].getElementsByTagName('p')[0].innerHTML = `Health: ${this.props.charakter[0].health}`;
-        document.getElementById('enemy_stats').getElementsByClassName('stat')[1].innerHTML = `<p>Health: ${this.props.foes[this.props.variables[0].foeID].health}</p> `;
-
-
-        //new Enemy
-        if([this.props.variables[0].foeID].health <= 0) {
-        this.props.foes[this.props.variables[0].foeID].health = this.props.foes[this.props.variables[0].foeID].starthealth;
-        this.newEnemy()
-
-        }*/
 
 
     componentDidMount = () => {
@@ -68,16 +48,15 @@ class FoeField extends Component {
 
     redrawFoe = (biom ,foe) => {
 
+        // copying object - do not rewrite the health of the foe in biom.js list
+        const enemy = Object.assign({}, biom[foe])
+
         this.setState(() => {
             return{
-                actualfoe: biom[foe]
+                ...this.state,
+                actualfoe: enemy
             }
         });
-
-        //document.querySelectorAll('.stat')[0].innerHTML = `Damage: ${biom[foe].damage}`;
-        //document.querySelectorAll('.stat')[1].innerHTML = `Health: ${biom[foe].health}`;
-        document.getElementById('enemy_name').innerHTML = `Name: ${biom[foe].name}`;
-        document.getElementById('enemy_image').innerHTML = `<img class="img-fluid" src="${biom[foe].img}"/>`;
 
         //foe color
         let foe_color = biom[foe].biomID;
@@ -92,10 +71,7 @@ class FoeField extends Component {
     foeDraw = () => {
         let randomBiom = Math.floor(Math.random() * 4);
 
-        console.log(randomBiom);
-        console.log( this.props.biomID);
-
-        if(randomBiom == this.props.biomID){ return this.foeDraw() }
+        if(randomBiom == this.props.charakter.biomID){ return this.foeDraw() }
 
         let randomEnemy = 0;
 
@@ -127,11 +103,10 @@ class FoeField extends Component {
         return(
             <div className="col-4 my-auto">
                 <div className="FoeField">
-                    <button className="btn" onClick={this.foeDraw}>New Foe</button>
                     <div id="enemy_container">
-                        <div id="enemy_image"></div>
+                        <div id="enemy_image"><img src={this.state.actualfoe.img}/></div>
                         <div id="attack_button" onClick={this.attack}>ATTACK</div>
-                        <div id="enemy_name"></div>
+                        <div id="enemy_name">{this.state.actualfoe.name}</div>
                         <div id="enemy_stats">
                             <div className="stat"> Damage: {this.state.actualfoe.damage}</div>
                             <div className="stat"> Health {this.state.actualfoe.health}</div>
@@ -145,15 +120,17 @@ class FoeField extends Component {
 
 const mapStateToProps = (props) => {
     return {
-        biomID: props.biomID,
-        damage: props.damage,
-        health: props.health,
+        charakter: {
+            biomID: props.biomID,
+            damage: props.damage,
+            health: props.health,
+        }
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        attack: () => { dispatch({ type: 'ATTACK', }) }
+        attack: (damage) => { dispatch({ type: 'TAKE_DAMAGE', damage })}
     }
 }
 

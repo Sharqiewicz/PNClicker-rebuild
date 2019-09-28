@@ -20,3 +20,6 @@
  - Better GIT history and code maintenance
  - Code optimilization
  - Learn SASS
+ - Reach solid point of knowing React technology
+ - Reach solid point of knowing Redux technology
+
