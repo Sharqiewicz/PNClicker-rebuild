@@ -16,7 +16,7 @@ class FoeField extends Component {
 
     attack = () =>{
 
-        let endgame = this.props.health - this.state.actualfoe.damage;
+        let endgame = this.props.charakter.health - this.state.actualfoe.damage;
         if (endgame <= 0) {
             window.alert('YOU DIED');
             this.props.history.push('/');
