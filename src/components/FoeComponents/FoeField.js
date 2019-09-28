@@ -74,11 +74,6 @@ class FoeField extends Component {
             }
         });
 
-        //document.querySelectorAll('.stat')[0].innerHTML = `Damage: ${biom[foe].damage}`;
-        //document.querySelectorAll('.stat')[1].innerHTML = `Health: ${biom[foe].health}`;
-        document.getElementById('enemy_name').innerHTML = `Name: ${biom[foe].name}`;
-        document.getElementById('enemy_image').innerHTML = `<img class="img-fluid" src="${biom[foe].img}"/>`;
-
         //foe color
         let foe_color = biom[foe].biomID;
         const colors_light = ['#e84118', '#00a8ff', '#4cd137', '#f8a5c2'];
@@ -129,9 +124,9 @@ class FoeField extends Component {
                 <div className="FoeField">
                     <button className="btn" onClick={this.foeDraw}>New Foe</button>
                     <div id="enemy_container">
-                        <div id="enemy_image"></div>
+                        <div id="enemy_image"><img src={this.state.actualfoe.img}/></div>
                         <div id="attack_button" onClick={this.attack}>ATTACK</div>
-                        <div id="enemy_name"></div>
+                        <div id="enemy_name">{this.state.actualfoe.name}</div>
                         <div id="enemy_stats">
                             <div className="stat"> Damage: {this.state.actualfoe.damage}</div>
                             <div className="stat"> Health {this.state.actualfoe.health}</div>
