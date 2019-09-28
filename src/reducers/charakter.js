@@ -4,7 +4,7 @@ import charakterimg from '../img/jake.png'
 const initState = {
     name: 'Fin the Human',
     damage: 1,
-    health: 10,
+    health: 110,
     steal: 0,
     bonusdamagebiom: 'none',
     vulnerabilities: 'none',
@@ -16,6 +16,14 @@ const initState = {
 }
 
 const charakter = (state = initState, action) => {
+
+    if(action.type == 'TAKE_DAMAGE'){
+        let damage = action.damage;
+        return {
+            ...state,
+            ...state[0], damage, money: state.money + state.damage + state.steal, health: state.health - damage
+        }
+    }
 
     if (action.type == 'CHANGE_NAME') {
         let name = action.name;

@@ -16,16 +16,15 @@ class FoeField extends Component {
 
     attack = () =>{
 
-        console.log(this.state.actualfoe);
-
         let endgame = this.props.health - this.state.actualfoe.damage;
 
-        // send - health to reducer
         // take dmg from reducer and - foe health
         // send money to reducer
 
+        this.props.attack(this.state.actualfoe.damage);
+
         // enemy health
-        if (this.state.actualfoe.health <= 0){
+        if (this.state.actualfoe.health <= 1){
             this.foeDraw();
         }
 
@@ -48,19 +47,6 @@ class FoeField extends Component {
         }
     }
 
-        /*this.props.charakter[0].health -= this.props.foes[this.props.variables[0].foeID].damage;
-        this.props.foes[this.props.variables[0].foeID].health -= this.props.charakter[0].damage;
-        document.getElementById('player_stats').getElementsByClassName('stat')[1].getElementsByTagName('p')[0].innerHTML = `Health: ${this.props.charakter[0].health}`;
-        document.getElementById('enemy_stats').getElementsByClassName('stat')[1].innerHTML = `<p>Health: ${this.props.foes[this.props.variables[0].foeID].health}</p> `;
-
-
-        //new Enemy
-        if([this.props.variables[0].foeID].health <= 0) {
-        this.props.foes[this.props.variables[0].foeID].health = this.props.foes[this.props.variables[0].foeID].starthealth;
-        this.newEnemy()
-
-        }*/
-
 
     componentDidMount = () => {
         this.foeDraw();
@@ -68,9 +54,12 @@ class FoeField extends Component {
 
     redrawFoe = (biom ,foe) => {
 
+        // copying object - do not rewrite the health of the foe in biom.js list
+        const enemy = Object.assign({}, biom[foe])
+
         this.setState(() => {
             return{
-                actualfoe: biom[foe]
+                actualfoe: enemy
             }
         });
 
@@ -86,9 +75,6 @@ class FoeField extends Component {
 
     foeDraw = () => {
         let randomBiom = Math.floor(Math.random() * 4);
-
-        console.log(randomBiom);
-        console.log( this.props.biomID);
 
         if(randomBiom == this.props.biomID){ return this.foeDraw() }
 
@@ -148,7 +134,7 @@ const mapStateToProps = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        attack: () => { dispatch({ type: 'ATTACK', }) }
+        attack: (damage) => { dispatch({ type: 'TAKE_DAMAGE', damage })}
     }
 }
 
