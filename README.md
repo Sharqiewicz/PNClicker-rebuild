@@ -23,3 +23,14 @@
  - Reach solid point of knowing React technology
  - Reach solid point of knowing Redux technology
 
+## How to run a project
+1.
+
+```
+npm install
+```
+2.
+
+```
+npm start
+```
