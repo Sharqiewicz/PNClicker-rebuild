@@ -16,11 +16,9 @@ class FoeField extends Component {
 
     attack = () =>{
 
-        let endgame = this.props.charakter.health - this.state.actualfoe.damage;
-        if (endgame <= 0) {
-            window.alert('YOU DIED');
-            this.props.history.push('/');
-            window.location.reload();
+        let endgamevar = this.props.charakter.health - this.state.actualfoe.damage;
+        if (endgamevar <= 0) {
+            this.props.endgame();
         }
 
         // send attack action to reducer
@@ -49,7 +47,8 @@ class FoeField extends Component {
     redrawFoe = (biom ,foe) => {
 
         // copying object - do not rewrite the health of the foe in biom.js list
-        const enemy = Object.assign({}, biom[foe])
+        const enemy = Object.assign({}, biom[foe]);
+        if (enemy.level > this.props.charakter.level) { return this.foeDraw() }
 
         this.setState(() => {
             return{
@@ -106,10 +105,11 @@ class FoeField extends Component {
                     <div id="enemy_container">
                         <div id="enemy_image"><img src={this.state.actualfoe.img}/></div>
                         <div id="attack_button" onClick={this.attack}>ATTACK</div>
-                        <div id="enemy_name">{this.state.actualfoe.name}</div>
+                        <div id="enemy_name"> <h3>{this.state.actualfoe.name}</h3></div>
                         <div id="enemy_stats">
-                            <div className="stat"> Damage: {this.state.actualfoe.damage}</div>
-                            <div className="stat"> Health {this.state.actualfoe.health}</div>
+                            <div className="stat"> Level: {this.state.actualfoe.level}</div>
+                            <div className="stat text-danger"> Damage: {this.state.actualfoe.damage}</div>
+                            <div className="stat text-danger"> Health {this.state.actualfoe.health}</div>
                         </div>
                     </div>
                 </div>
@@ -124,6 +124,7 @@ const mapStateToProps = (props) => {
             biomID: props.biomID,
             damage: props.damage,
             health: props.health,
+            level: props.level,
         }
     }
 }

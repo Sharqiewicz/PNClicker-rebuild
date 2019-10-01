@@ -12,12 +12,17 @@ class GameScreen extends Component{
         document.getElementById('GameScreen').style.backgroundColor = bg_color[this.props.biomID];
     }
 
+    endgame(){
+        document.getElementById('endgamebutton').classList.add('active');
+    }
+
    render(){
        return (
            <div id="GameScreen">
+               <button id="endgamebutton" className="btn btn-warning" onClick={() => { this.props.history.push('/'); window.location.reload();}}>You died! <br/> Play Again </button>
                <GameCenter />
                <CharakterField/>
-               <FoeField />
+               <FoeField endgame={this.endgame}/>
            </div>
 
        )

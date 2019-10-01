@@ -23,3 +23,28 @@
  - Reach solid point of knowing React technology
  - Reach solid point of knowing Redux technology
 
+## How to run a project
+1.
+
+```
+npm install
+```
+2.
+
+```
+npm start
+```
+
+
+## Images and icons
+All images are from Adventure Time cartoon
+Icons - https://www.flaticon.com
+
+# Foe Lvl - How many points of stats
+1 Level - 6 Points
+2 Level - 16 Points
+3 Level - 26 Points
+4 Level - 36 Points
+5 Level - 46 Points
+6 Level - 56 Points
+7 Level - 76 Points

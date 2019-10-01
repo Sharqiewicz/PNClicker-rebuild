@@ -1,6 +1,10 @@
 import water_nymphs from '../../../img/water_nymphs.png'
 import ice_king from '../../../img/ice_king.png'
 import penguin from '../../../img/penguin.png'
+import Whywolf from '../../../img/Whywolf.png'
+import Whywolf_glasses from '../../../img/Whywolf-glasses.png'
+import Princess_Beautiful from '../../../img/Princess_Beautiful.png'
+import Marceline from '../../../img/Marceline.png'
 
 const waterFoes = [
     {
@@ -22,14 +26,14 @@ const waterFoes = [
         biomID: 1,
         level: 2,
         //
-        name: `Ice King`,
-        damage: 1,
-        health: 5,
+        name: `Whywolf`,
+        damage: 2,
+        health: 14,
         //
         bonusdamagebiom: [`fire`, `slime`],
         vulnerabilities: `water`,
         //
-        img: ice_king
+        img: Whywolf
     },
     {
         id: 2,
@@ -37,13 +41,69 @@ const waterFoes = [
         level: 3,
         //
         name: `Penguin`,
-        damage: 1,
-        health: 5,
+        damage: 3,
+        health: 23,
         //
         bonusdamagebiom: [`fire`, `slime`],
         vulnerabilities: `water`,
         //
         img: penguin
+    },
+    {
+        id: 2,
+        biomID: 1,
+        level: 4,
+        //
+        name: `Whywolf Prof`,
+        damage: 4,
+        health: 32,
+        //
+        bonusdamagebiom: [`fire`, `slime`],
+        vulnerabilities: `water`,
+        //
+        img: Whywolf_glasses
+    },
+    {
+        id: 2,
+        biomID: 1,
+        level: 5,
+        //
+        name: `Princess Beautiful`,
+        damage: 4,
+        health: 42,
+        //
+        bonusdamagebiom: [`fire`, `slime`],
+        vulnerabilities: `water`,
+        //
+        img: Princess_Beautiful
+    },
+    {
+        id: 2,
+        biomID: 1,
+        level: 6,
+        //
+        name: `Marceline`,
+        damage: 5,
+        health: 51,
+        //
+        bonusdamagebiom: [`fire`, `slime`],
+        vulnerabilities: `water`,
+        //
+        img: Marceline
+    },
+    {
+        id: 2,
+        biomID: 1,
+        level: 3,
+        //
+        name: `Ice King`,
+        damage: 6,
+        health: 70,
+        //
+        bonusdamagebiom: [`fire`, `slime`],
+        vulnerabilities: `water`,
+        //
+        img: ice_king
     },
 ]
 
