@@ -47,3 +47,4 @@ Icons - https://www.flaticon.com
 4 Level - 36 Points
 5 Level - 46 Points
 6 Level - 56 Points
+7 Level - 76 Points
