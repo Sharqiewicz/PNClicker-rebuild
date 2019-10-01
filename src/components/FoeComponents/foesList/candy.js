@@ -3,7 +3,7 @@ import candy_elemental_2 from '../../../img/candy_elemental_2.png'
 import abracadaniel from '../../../img/abracadaniel.png'
 import cotton_candy_princess from '../../../img/Cotton_Candy_Princess.png'
 import lsp from '../../../img/LSP.png'
-import raincorn from '../../../img/'
+import raincorn from '../../../img/LadyRainicorn.png'
 
 const candyFoes = [
     {
