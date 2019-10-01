@@ -25,9 +25,9 @@ const candyFoes = [
         biomID: 3,
         level: 2,
         //
-        name: `Candy child`,
-        damage: 5,
-        health: 5,
+        name: `Candy Thinker`,
+        damage: 4,
+        health: 12,
         //
         bonusdamagebiom: [`fire`, `slime`],
         vulnerabilities: `water`,
@@ -39,9 +39,23 @@ const candyFoes = [
         biomID: 3,
         level: 3,
         //
-        name: `Candy child`,
-        damage: 10,
-        health: 5,
+        name: `Cotton Candy Princess`,
+        damage: 6,
+        health: 20,
+        //
+        bonusdamagebiom: [`fire`, `slime`],
+        vulnerabilities: `water`,
+        //
+        img: cotton_candy_princess
+    },
+    {
+        id: 0,
+        biomID: 3,
+        level: 4,
+        //
+        name: `Candy Magician`,
+        damage: 12,
+        health: 24,
         //
         bonusdamagebiom: [`fire`, `slime`],
         vulnerabilities: `water`,
@@ -51,17 +65,31 @@ const candyFoes = [
     {
         id: 0,
         biomID: 3,
-        level: 3,
+        level: 5,
         //
-        name: `Candy child`,
-        damage: 10,
-        health: 5,
+        name: `Lumpy Space Princess`,
+        damage: 26,
+        health: 20,
         //
         bonusdamagebiom: [`fire`, `slime`],
         vulnerabilities: `water`,
         //
-        img: abracadaniel
+        img: lsp
     },
+    {
+        id: 0,
+        biomID: 3,
+        level: 6,
+        //
+        name: `Lady Rainicorn`,
+        damage: 55,
+        health: 1,
+        //
+        bonusdamagebiom: [`fire`, `slime`],
+        vulnerabilities: `water`,
+        //
+        img: raincorn
+    }
 
 ]
 
