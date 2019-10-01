@@ -5,6 +5,7 @@ import cotton_candy_princess from '../../../img/Cotton_Candy_Princess.png'
 import lsp from '../../../img/LSP.png'
 import raincorn from '../../../img/LadyRainicorn.png'
 import Hot_Dog_Princess from '../../../img/Hot_Dog_Princess.png'
+import Candy_person from '../../../img/Candy_person.png'
 
 const candyFoes = [
     {
@@ -20,6 +21,20 @@ const candyFoes = [
         vulnerabilities: `water`,
         //
         img: candy_elemental
+    },
+    {
+        id: 0,
+        biomID: 3,
+        level: 1,
+        //
+        name: `Candy Citizen`,
+        damage: 2,
+        health: 4,
+        //
+        bonusdamagebiom: [`fire`, `slime`],
+        vulnerabilities: `water`,
+        //
+        img: Candy_person
     },
     {
         id: 0,
