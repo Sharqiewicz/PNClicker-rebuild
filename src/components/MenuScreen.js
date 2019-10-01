@@ -11,7 +11,7 @@ class MenuScreen extends Component{
         super();
         this.state = {
             options : [ { id: 0, name: 'PLAY', image: playbutton, text: 'Begin your adventure! Choose one of four bioms and conquer the pnClicker world!'},
-                        { id: 1, name: 'OPTIONS', image: settingsgears, text: 'Set difficulty level, sound and see credits'},
+                        { id: 1, name: 'OPTIONS', image: settingsgears, text: 'Set difficulty level, sound and language'},
                         { id: 2, name: 'INSTRUCTIONS', image: openbook, text: 'Learn how to play PnClicker, simple guide.'} ]
         }
     }
@@ -21,7 +21,7 @@ class MenuScreen extends Component{
         const optionslist = this.state.options.map( item=> <Option key={item.id} name={item.name} image={item.image} text={item.text} history={this.props.history}/>);
         return(
             <div id="MenuScreen">
-                <h1 className="text-center text-white col-12"> PnClicker v0.4</h1>
+                <h1 className="text-center text-white col-12"> PnClicker Alpha 1.1</h1>
                 <div className="box">
                     {optionslist}
                 </div>
