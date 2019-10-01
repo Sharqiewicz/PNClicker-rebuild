@@ -16,11 +16,9 @@ class FoeField extends Component {
 
     attack = () =>{
 
-        let endgame = this.props.charakter.health - this.state.actualfoe.damage;
-        if (endgame <= 0) {
-            window.alert('YOU DIED');
-            this.props.history.push('/');
-            window.location.reload();
+        let endgamevar = this.props.charakter.health - this.state.actualfoe.damage;
+        if (endgamevar <= 0) {
+            this.props.endgame();
         }
 
         // send attack action to reducer
