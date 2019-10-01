@@ -47,7 +47,8 @@ class FoeField extends Component {
     redrawFoe = (biom ,foe) => {
 
         // copying object - do not rewrite the health of the foe in biom.js list
-        const enemy = Object.assign({}, biom[foe])
+        const enemy = Object.assign({}, biom[foe]);
+        if (enemy.level > this.props.charakter.level) { return this.foeDraw() }
 
         this.setState(() => {
             return{
@@ -108,6 +109,7 @@ class FoeField extends Component {
                         <div id="enemy_stats">
                             <div className="stat"> Damage: {this.state.actualfoe.damage}</div>
                             <div className="stat"> Health {this.state.actualfoe.health}</div>
+                            <div className="stat"> Level {this.state.actualfoe.level}</div>
                         </div>
                     </div>
                 </div>
@@ -122,6 +124,7 @@ const mapStateToProps = (props) => {
             biomID: props.biomID,
             damage: props.damage,
             health: props.health,
+            level: props.level,
         }
     }
 }

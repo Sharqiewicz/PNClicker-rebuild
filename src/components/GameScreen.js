@@ -13,14 +13,13 @@ class GameScreen extends Component{
     }
 
     endgame(){
-        window.alert('END');
         document.getElementById('endgamebutton').classList.add('active');
     }
 
    render(){
        return (
            <div id="GameScreen">
-               <button id="endgamebutton" className="btn btn-warning" onClick={() => { this.props.history.push('/')}}>You died! <br/> Play Again </button>
+               <button id="endgamebutton" className="btn btn-warning" onClick={() => { this.props.history.push('/'); window.location.reload();}}>You died! <br/> Play Again </button>
                <GameCenter />
                <CharakterField/>
                <FoeField endgame={this.endgame}/>
