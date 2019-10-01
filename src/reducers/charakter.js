@@ -5,7 +5,7 @@ const initState = {
     name: 'Fin the Human',
     damage: 1,
     health: 10,
-    steal: 0,
+    steal: 1,
     bonusdamagebiom: 'none',
     vulnerabilities: 'none',
     biomID: 0,
@@ -21,7 +21,7 @@ const charakter = (state = initState, action) => {
         let damage = action.damage;
         return {
             ...state,
-            ...state[0], money: state.money + state.damage + state.steal, health: state.health - damage
+            ...state[0], money: state.money + state.steal, health: state.health - damage
         }
     }
 
@@ -51,7 +51,7 @@ const charakter = (state = initState, action) => {
             else if ([actionstat] == 'level') {
                 return {
                     ...state,
-                    ...state, level: state.level + 1, health: state.health + state.level, damage: state.damage + 1, steal: state.steal + 1
+                    ...state, level: state.level + 1, health: state.health + state.level, damage: state.damage + 1, steal: state.steal + 1, money
                 }
             }
             else {
