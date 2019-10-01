@@ -105,11 +105,11 @@ class FoeField extends Component {
                     <div id="enemy_container">
                         <div id="enemy_image"><img src={this.state.actualfoe.img}/></div>
                         <div id="attack_button" onClick={this.attack}>ATTACK</div>
-                        <div id="enemy_name">{this.state.actualfoe.name}</div>
+                        <div id="enemy_name"> <h3>{this.state.actualfoe.name}</h3></div>
                         <div id="enemy_stats">
-                            <div className="stat"> Damage: {this.state.actualfoe.damage}</div>
-                            <div className="stat"> Health {this.state.actualfoe.health}</div>
-                            <div className="stat"> Level {this.state.actualfoe.level}</div>
+                            <div className="stat"> Level: {this.state.actualfoe.level}</div>
+                            <div className="stat text-danger"> Damage: {this.state.actualfoe.damage}</div>
+                            <div className="stat text-danger"> Health {this.state.actualfoe.health}</div>
                         </div>
                     </div>
                 </div>
