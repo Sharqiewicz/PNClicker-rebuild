@@ -111,7 +111,7 @@ class FoeField extends Component {
 
     render(){
         return(
-            <div className="col-4 my-auto">
+            <div className="col-sm-12 col-md-4 my-auto">
                 <div className="FoeField">
                     <div id="enemy_container">
                         <div id="enemy_image"><img src={this.state.actualfoe.img}/></div>

@@ -34,6 +34,19 @@ body{
 
 #attack_button{
     display: none;
+    position: absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background: #a11;
+    border-radius: 25px;
+    text-align: center;
+    z-index: 999;
+    animation: show 0.5s ease-in-out;
+    animation-fill-mode: both;
+    border: 5px solid white;
+    font-size: 24px;
+    padding: 25px;
 }
 
 #enemy_container:hover{
@@ -41,27 +54,17 @@ body{
 
     #attack_button{
         display: block;
-        position: absolute;
-        top:50%; left:50%;
-        transform: translate(-50%, -50%);
-        padding: 25px;
-        color: white;
-        background: #a11;
-        border-radius: 25px;
-        text-align: center;
-        z-index: 999;
-        animation: show 0.5s ease-in-out;
-        animation-fill-mode: both;
-        border: 5px solid white;
-        font-size: 24px;
+
     }
 }
 
 @keyframes show{
     0%{
-        width: 50px;
+        opacity: 0.2;
+        width: 150px;
     }
     100%{
+        opacity: 1;
         width: 300px;
     }
 }
@@ -135,7 +138,6 @@ body{
     flex-wrap: wrap;
 
     width: 100vw;
-    height: 100vh;
     background-color: #111;
 
 
@@ -290,4 +292,106 @@ body{
         transition: 0.6s;
         font-size: 24px;
     }
+}
+
+#enemy_stats{
+    text-align: center;
+}
+
+@media (min-width: 576px){
+        #MenuScreen, #StartScreenSection{
+            height: 100vh;
+        }
+}
+
+////////////////////////////////////////////////////
+
+#MenuScreen{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    flex-wrap: wrap;
+
+     .box{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+     .option{
+        cursor: pointer;
+        max-width: 400px;
+        margin: 20px;
+    }
+
+     .option-image{
+        height: 200px;
+        transition: 0.5s;
+    }
+
+     .option-image img{
+        width: 150px;
+        height: 150px;
+    }
+
+
+     .option-image.active{
+        position: relative;
+        background: #111;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        text-align: center;
+        transform:  translateY(100px);
+    }
+
+     .option:hover .option-image.active{
+        background: #D980FA;
+        transform:  translateY(0);
+    }
+
+     .option:hover .option-description{
+        transform:  translateY(0);
+    }
+
+     .option-image.active .option-icon-section{
+        opacity: 0.2;
+        transition: 0.5s;
+    }
+
+     .option-image.active .option-icon-section h3{
+        margin: 10px 0 0;
+        padding: 0;
+        color: #fff;
+    }
+
+     .option:hover .option-icon-section{
+        opacity: 1;
+    }
+     .option:hover .option-icon-section img{
+        width: 140px;
+        height: 140px;
+    }
+
+     .option-description{
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+        transform:  translateY(-100px);
+
+        transition: 0.5s;
+    }
+
+     .option-description p{
+        margin: 0;
+        padding: 0;
+    }
+
 }
