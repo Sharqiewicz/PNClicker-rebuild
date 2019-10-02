@@ -74,7 +74,7 @@ const charakter = (state = initState, action) => {
     if (action.type == 'CHARAKTER_BIOM') {
         return {
             ...state,
-            ...state, biomID: action.biomID, biomicon: action.biomicon
+            ...state, biomID: action.biomID, biomicon: action.biomicon, vulnerabilities: action.vulnerabilities, bonusdamagebiom: action.bonusdamagebiom
         }
     }
 
