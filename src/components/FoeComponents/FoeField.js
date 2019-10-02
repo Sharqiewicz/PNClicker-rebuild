@@ -119,8 +119,9 @@ class FoeField extends Component {
                         <div id="enemy_name"> <h3>{this.state.actualfoe.name}</h3></div>
                         <div id="enemy_stats">
                             <div className="stat"> Level: {this.state.actualfoe.level}</div>
-                            <div className="stat text-white"> Damage: {this.state.actualfoe.damage} {this.props.charakter.vulnerabilities == this.state.actualfoe.biomID ? `+ ${this.state.actualfoe.level}` : ""}</div>
-                            <div className="stat text-white">Health: {this.state.actualfoe.vulnerabilities == this.props.charakter.biomID ?  this.state.actualfoe.health - this.state.actualfoe.level  : this.state.actualfoe.health}</div>
+                            <div className="stat text-white"> Damage: {this.state.actualfoe.damage} {console.log(this.props.charakter.vulnerabilities, this.props.charakter.bonusdamagebiom), this.props.charakter.vulnerabilities == this.state.actualfoe.biomID ? `+ ${this.state.actualfoe.level}` : ""}</div>
+                            <div className="stat text-white">Health: {this.state.actualfoe.health }</div>
+                            <div className="text-danger">{this.state.actualfoe.vulnerabilities == this.props.charakter.biomID ? `You have bonus + ${this.state.actualfoe.level} DMG ` : ""}</div>
                         </div>
                     </div>
                 </div>

@@ -28,9 +28,14 @@ class BiomScreen extends Component {
     }
 
     playGame = (e) => {
+        let vul = Number(e.target.id) === 3 ? 0 : Number(e.target.id) + 1;
+        let bdm = Number(e.target.id) === 3 ? 0 : Number(e.target.id) - 1;
+
+        console.log(e.target.id, "/", vul,"/", bdm)
+
         let biomicons = [ fireicon, watericon, slimeicon, candyicon];
         let biomimg = biomicons[e.target.id];
-        this.props.playGame(e.target.id, biomimg);
+        this.props.playGame(e.target.id, biomimg, vul, bdm);
         this.props.history.push('/GAME');
     }
 
@@ -58,7 +63,7 @@ class BiomScreen extends Component {
                             <div id="3"><img src={candyicon} id="3"/></div>
                         </div>
 
-                        <div className="biom_desc col-10">Hover on element to see the description!</div>
+                        <div className="biom_desc col-10">Hover on the element to see the description!</div>
             </section>
         )
     }
@@ -67,13 +72,15 @@ class BiomScreen extends Component {
 const mapStateToProps = (props) => {
     return {
         biomID: props.biomID,
-        biomicon: props.biomicon
+        biomicon: props.biomicon,
+        bonusbiomdamage: props.bonusbiomdamage,
+        vulnerabilities: props.vulnerabilities
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        playGame: (biom, biomicon) => { dispatch({ type: 'CHARAKTER_BIOM', biomID: biom, biomicon: biomicon }) }
+        playGame: (biom, biomicon, vul, bdm) => { dispatch({ type: 'CHARAKTER_BIOM', biomID: biom, biomicon: biomicon, bonusdamagebiom: bdm, vulnerabilities: vul }) }
     }
 }
 
