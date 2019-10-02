@@ -16,8 +16,8 @@ const slimeFoes = [
             damage: 2,
             health: 3,
             //
-            bonusdamagebiom: [`fire`, `water`],
-            vulnerabilities: `candy`,
+            bonusdamagebiom: 1,
+            vulnerabilities: 3,
             //
             img: slime_elemental
         },
@@ -30,8 +30,8 @@ const slimeFoes = [
             damage: 8,
             health: 8,
             //
-            bonusdamagebiom: [`fire`, `water`],
-            vulnerabilities: `candy`,
+            bonusdamagebiom: 1,
+            vulnerabilities: 3,
             //
             img: A_Worm
         },
@@ -44,8 +44,8 @@ const slimeFoes = [
             damage: 13,
             health: 13,
             //
-            bonusdamagebiom: [`fire`, `water`],
-            vulnerabilities: `candy`,
+            bonusdamagebiom: 1,
+            vulnerabilities: 3,
             //
             img: slime_citizen
         },
@@ -58,8 +58,8 @@ const slimeFoes = [
             damage: 18,
             health: 18,
             //
-            bonusdamagebiom: [`fire`, `water`],
-            vulnerabilities: `candy`,
+            bonusdamagebiom: 1,
+            vulnerabilities: 3,
             //
             img: ugly_monster
         },
@@ -72,8 +72,8 @@ const slimeFoes = [
             damage: 23,
             health: 23,
             //
-            bonusdamagebiom: [`fire`, `water`],
-            vulnerabilities: `candy`,
+            bonusdamagebiom: 1,
+            vulnerabilities: 3,
             //
             img: bmo
         },
@@ -86,8 +86,8 @@ const slimeFoes = [
             damage: 18,
             health: 18,
             //
-            bonusdamagebiom: [`fire`, `water`],
-            vulnerabilities: `candy`,
+            bonusdamagebiom: 1,
+            vulnerabilities: 3,
             //
             img: slime_princess
         },
@@ -100,8 +100,8 @@ const slimeFoes = [
             damage: 38,
             health: 38,
             //
-            bonusdamagebiom: [`fire`, `water`],
-            vulnerabilities: `candy`,
+            bonusdamagebiom: 1,
+            vulnerabilities: 3,
             //
             img: ppp
         },
