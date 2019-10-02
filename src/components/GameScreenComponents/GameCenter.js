@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Onestat from './Onestat';
 import AddStat from './AddStat';
+import AddHealth from './AddHealth';
 import { connect } from 'react-redux';
 import icon from '../../img/icons/fire.png';
 
@@ -28,7 +29,7 @@ class GameCenter extends Component{
                 <Onestat name='Balance' value={this.props.money} stat={this.statfunc}/>
                 <AddStat name='Level' value={this.props.level} stat={this.statfunc}/>
                 <AddStat name='Damage' value={this.props.damage} stat={this.statfunc}/>
-                <AddStat name='Health' value={this.props.health} stat={this.statfunc}/>
+                <AddHealth name='Health' value={this.props.health} stat={this.statfunc}/>
                 <AddStat name='Steal' value={this.props.steal} stat={this.statfunc}/>
             </div>
         )
