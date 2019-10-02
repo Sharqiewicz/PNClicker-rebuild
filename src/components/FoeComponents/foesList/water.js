@@ -16,8 +16,8 @@ const waterFoes = [
         damage: 1,
         health: 5,
         //
-        bonusdamagebiom: [`fire`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 0,
+        vulnerabilities: 2,
         //
         img: water_nymphs
     },
@@ -30,8 +30,8 @@ const waterFoes = [
         damage: 2,
         health: 14,
         //
-        bonusdamagebiom: [`fire`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 0,
+        vulnerabilities: 2,
         //
         img: Whywolf
     },
@@ -44,8 +44,8 @@ const waterFoes = [
         damage: 3,
         health: 23,
         //
-        bonusdamagebiom: [`fire`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 0,
+        vulnerabilities: 2,
         //
         img: penguin
     },
@@ -58,8 +58,8 @@ const waterFoes = [
         damage: 4,
         health: 32,
         //
-        bonusdamagebiom: [`fire`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 0,
+        vulnerabilities: 2,
         //
         img: Whywolf_glasses
     },
@@ -72,8 +72,8 @@ const waterFoes = [
         damage: 4,
         health: 42,
         //
-        bonusdamagebiom: [`fire`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 0,
+        vulnerabilities: 2,
         //
         img: Princess_Beautiful
     },
@@ -86,8 +86,8 @@ const waterFoes = [
         damage: 5,
         health: 51,
         //
-        bonusdamagebiom: [`fire`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 0,
+        vulnerabilities: 2,
         //
         img: Marceline
     },
@@ -100,8 +100,8 @@ const waterFoes = [
         damage: 6,
         health: 70,
         //
-        bonusdamagebiom: [`fire`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 0,
+        vulnerabilities: 2,
         //
         img: ice_king
     },

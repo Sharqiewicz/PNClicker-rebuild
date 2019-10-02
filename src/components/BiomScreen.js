@@ -11,16 +11,20 @@ class BiomScreen extends Component {
 
 
     changeDescription = (e) => {
-        const colors_dark = ['#211', '#112', '#122', '#212'];
-        const colors_light = ['#daa', '#aad', '#add', '#dad'];
-        const descriptions = ['First Desc', 'Second Desc', 'Third Desc', "Fourth Desc"];
-        const biom_names = ['Fire', 'Water', 'Slime', 'Candy'];
+
+        const biom_obj = {
+            0: [ '#211', '#daa', 'Vulnerabilities: Water, Bonus DMG: Candy', 'Fire'],
+            1: [ '#112', "#aad", "Vulnerabilities: Slime, Bonus DMG: Fire", "Water"],
+            2: [ '#122', "#add", "Vulnerabilities: Candy, Bonus DMG: Water", "Slime"],
+            3: [ '#212', "#dad", "Vulnerabilities: Fire, Bonus DMG: Slime", "Candy"],
+
+        }
 
         let element = document.querySelector('.biom_desc');
-        element.innerHTML = descriptions[e.target.id];
-        element.style.color = colors_light[e.target.id];
-        document.getElementById('your_biom').innerHTML = biom_names[e.target.id];
-        document.getElementById('StartScreenSection').style.backgroundColor = colors_dark[e.target.id];
+        element.innerHTML = biom_obj[e.target.id][2];
+        element.style.color = biom_obj[e.target.id][1];
+        document.getElementById('your_biom').innerHTML = biom_obj[e.target.id][3];
+        document.getElementById('StartScreenSection').style.backgroundColor = biom_obj[e.target.id][0];
     }
 
     playGame = (e) => {

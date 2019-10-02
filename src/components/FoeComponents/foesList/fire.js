@@ -13,11 +13,11 @@ const fireFoes = [
         level: 1,
         //
         name: `fire child`,
-        damage: 5,
+        damage: 4,
         health: 1,
         //
-        bonusdamagebiom: [`candy`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 3,
+        vulnerabilities: 1,
         //
         img: fire_elemental_child
     },
@@ -30,8 +30,8 @@ const fireFoes = [
         damage: 10,
         health: 6,
         //
-        bonusdamagebiom: [`candy`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 3,
+        vulnerabilities: 1,
         //
         img: fire_elemental
     },
@@ -44,8 +44,8 @@ const fireFoes = [
         damage: 16,
         health: 10,
         //
-        bonusdamagebiom: [`candy`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 3,
+        vulnerabilities: 1,
         //
         img: fire_elemental_2
     },
@@ -58,8 +58,8 @@ const fireFoes = [
         damage: 28,
         health: 8,
         //
-        bonusdamagebiom: [`candy`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 3,
+        vulnerabilities: 1,
         //
         img: flame_minstrel
     },
@@ -72,8 +72,8 @@ const fireFoes = [
         damage: 42,
         health: 4,
         //
-        bonusdamagebiom: [`candy`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 3,
+        vulnerabilities: 1,
         //
         img: flame_princess
     },
@@ -86,8 +86,8 @@ const fireFoes = [
         damage: 48,
         health: 8,
         //
-        bonusdamagebiom: [`candy`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 3,
+        vulnerabilities: 1,
         //
         img: Flame_Guard
     },
@@ -100,8 +100,8 @@ const fireFoes = [
         damage: 1,
         health: 5,
         //
-        bonusdamagebiom: [`candy`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 3,
+        vulnerabilities: 1,
         //
         img: Flame_King
     }

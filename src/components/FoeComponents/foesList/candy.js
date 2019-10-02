@@ -17,8 +17,8 @@ const candyFoes = [
         damage: 1,
         health: 5,
         //
-        bonusdamagebiom: [`fire`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 2,
+        vulnerabilities: 0,
         //
         img: candy_elemental
     },
@@ -31,8 +31,8 @@ const candyFoes = [
         damage: 2,
         health: 4,
         //
-        bonusdamagebiom: [`fire`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 2,
+        vulnerabilities: 0,
         //
         img: Candy_person
     },
@@ -45,8 +45,8 @@ const candyFoes = [
         damage: 4,
         health: 12,
         //
-        bonusdamagebiom: [`fire`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 2,
+        vulnerabilities: 0,
         //
         img: candy_elemental_2
     },
@@ -59,8 +59,8 @@ const candyFoes = [
         damage: 6,
         health: 20,
         //
-        bonusdamagebiom: [`fire`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 2,
+        vulnerabilities: 0,
         //
         img: cotton_candy_princess
     },
@@ -73,8 +73,8 @@ const candyFoes = [
         damage: 12,
         health: 24,
         //
-        bonusdamagebiom: [`fire`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 2,
+        vulnerabilities: 0,
         //
         img: abracadaniel
     },
@@ -87,8 +87,8 @@ const candyFoes = [
         damage: 26,
         health: 20,
         //
-        bonusdamagebiom: [`fire`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 2,
+        vulnerabilities: 0,
         //
         img: lsp
     },
@@ -101,8 +101,8 @@ const candyFoes = [
         damage: 55,
         health: 1,
         //
-        bonusdamagebiom: [`fire`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 2,
+        vulnerabilities: 0,
         //
         img: raincorn
     },
@@ -115,8 +115,8 @@ const candyFoes = [
         damage: 55,
         health: 21,
         //
-        bonusdamagebiom: [`fire`, `slime`],
-        vulnerabilities: `water`,
+        bonusdamagebiom: 2,
+        vulnerabilities: 0,
         //
         img: Hot_Dog_Princess
     }
