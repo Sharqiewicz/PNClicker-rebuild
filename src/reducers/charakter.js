@@ -44,7 +44,7 @@ const charakter = (state = initState, action) => {
             let many = state[actionstat] + number;
 
             //different costs of stats
-            let money = action.actionstat.toLowerCase() == 'health' ? state.money - 1 : state.money - state[actionstat];
+            let money = action.actionstat.toLowerCase() == 'health' ? state.money - (1 * number) : state.money - state[actionstat];
             money = action.actionstat.toLowerCase() == 'level' ? state.money - state.level * 10 : money;
 
             if (money < 0) { return { ...state } }
