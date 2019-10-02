@@ -31,8 +31,6 @@ class BiomScreen extends Component {
         let vul = Number(e.target.id) === 3 ? 0 : Number(e.target.id) + 1;
         let bdm = Number(e.target.id) === 3 ? 0 : Number(e.target.id) - 1;
 
-        console.log(e.target.id, "/", vul,"/", bdm)
-
         let biomicons = [ fireicon, watericon, slimeicon, candyicon];
         let biomimg = biomicons[e.target.id];
         this.props.playGame(e.target.id, biomimg, vul, bdm);
