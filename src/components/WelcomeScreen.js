@@ -4,11 +4,6 @@ import { connect } from 'react-redux';
 
 class WelcomeScreen extends Component {
 
-    componentDidMount(){
-        //this.changeBackground();
-        document.getElementById('WelcomeScreen').style.textShadow = `0.2em 0.2em 0.3em #D980FA`;
-    }
-
     constructor(){
         super()
         this.state = {
