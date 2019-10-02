@@ -34,6 +34,19 @@ body{
 
 #attack_button{
     display: none;
+    position: absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background: #a11;
+    border-radius: 25px;
+    text-align: center;
+    z-index: 999;
+    animation: show 0.5s ease-in-out;
+    animation-fill-mode: both;
+    border: 5px solid white;
+    font-size: 24px;
+    padding: 25px;
 }
 
 #enemy_container:hover{
@@ -41,27 +54,17 @@ body{
 
     #attack_button{
         display: block;
-        position: absolute;
-        top:50%; left:50%;
-        transform: translate(-50%, -50%);
-        padding: 25px;
-        color: white;
-        background: #a11;
-        border-radius: 25px;
-        text-align: center;
-        z-index: 999;
-        animation: show 0.5s ease-in-out;
-        animation-fill-mode: both;
-        border: 5px solid white;
-        font-size: 24px;
+
     }
 }
 
 @keyframes show{
     0%{
-        width: 50px;
+        opacity: 0.2;
+        width: 150px;
     }
     100%{
+        opacity: 1;
         width: 300px;
     }
 }
@@ -290,4 +293,8 @@ body{
         transition: 0.6s;
         font-size: 24px;
     }
+}
+
+#enemy_stats{
+    text-align: center;
 }
