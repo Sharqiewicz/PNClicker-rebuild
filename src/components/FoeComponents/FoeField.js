@@ -16,17 +16,27 @@ class FoeField extends Component {
 
     attack = () =>{
 
-        let endgamevar = this.props.charakter.health - this.state.actualfoe.damage;
+        let ch_received_dmg = this.state.actualfoe.damage;
+        let enemy_received_dmg = this.props.charakter.damage;
+
+        if( this.state.actualfoe.bonusdamagebiom == this.props.charakter.biomID){
+            ch_received_dmg = this.state.actualfoe.damage + this.state.actualfoe.level;
+        }
+        if( this.props.charakter.bonusdamagebiom == this.state.actualfoe.biomID){
+            enemy_received_dmg = this.props.charakter.damage + this.props.charakter.level;
+        }
+
+        let endgamevar = this.props.charakter.health - ch_received_dmg;
         if (endgamevar <= 0) {
             this.props.endgame();
         }
 
         // send attack action to reducer
-        this.props.attack(this.state.actualfoe.damage);
+        this.props.attack(ch_received_dmg);
 
 
         // enemy attack stuff in this.state
-        let newhealth = this.state.actualfoe.health -= this.props.charakter.damage;
+        let newhealth = this.state.actualfoe.health -= enemy_received_dmg;
         if (newhealth <= 0) {
             this.foeDraw();
         }
@@ -109,8 +119,8 @@ class FoeField extends Component {
                         <div id="enemy_name"> <h3>{this.state.actualfoe.name}</h3></div>
                         <div id="enemy_stats">
                             <div className="stat"> Level: {this.state.actualfoe.level}</div>
-                            <div className="stat text-danger"> Damage: {this.state.actualfoe.damage}</div>
-                            <div className="stat text-danger"> Health {this.state.actualfoe.health}</div>
+                            <div className="stat text-white"> Damage: {this.state.actualfoe.damage} {this.props.charakter.vulnerabilities == this.state.actualfoe.biomID ? `+ ${this.state.actualfoe.level}` : ""}</div>
+                            <div className="stat text-white">Health: {this.state.actualfoe.vulnerabilities == this.props.charakter.biomID ?  this.state.actualfoe.health - this.state.actualfoe.level  : this.state.actualfoe.health}</div>
                         </div>
                     </div>
                 </div>
@@ -126,6 +136,8 @@ const mapStateToProps = (props) => {
             damage: props.damage,
             health: props.health,
             level: props.level,
+            vulnerabilities: props.vulnerabilities,
+            bonusdamagebiom: props.bonusdamagebiom
         }
     }
 }

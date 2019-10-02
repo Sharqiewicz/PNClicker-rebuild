@@ -13,7 +13,7 @@ const fireFoes = [
         level: 1,
         //
         name: `fire child`,
-        damage: 5,
+        damage: 4,
         health: 1,
         //
         bonusdamagebiom: 3,
