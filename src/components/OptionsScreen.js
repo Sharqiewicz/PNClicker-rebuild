@@ -1,9 +1,10 @@
 import React from 'react'
 
-function OptionsScreen() {
+function OptionsScreen(props) {
 
     return (
         <div id="OptionsScreen" className="text-white">
+            <button className="btn btn-warning mb-5" onClick={() => { props.history.push('./')}}>Back...</button>
             <h3>In Progress...</h3>
             <p>To do in this project:</p>
             <ol>
