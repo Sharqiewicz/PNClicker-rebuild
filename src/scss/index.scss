@@ -275,3 +275,19 @@ body{
 #endgamebutton.active{
     display:block !important;
 }
+
+#InstructionsScreen, #OptionsScreen{
+    width: 100vw;
+    height: 100vh;
+    background: #111;
+    padding: 5%;
+
+    p{
+        margin: 20px !important;
+    }
+    p:hover{
+        cursor: pointer;
+        transition: 0.6s;
+        font-size: 24px;
+    }
+}
