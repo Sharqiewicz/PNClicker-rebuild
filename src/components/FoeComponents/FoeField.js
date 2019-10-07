@@ -66,10 +66,10 @@ class FoeField extends Component {
         // musi zwracać
 
         //broken
-        /*for ( let key in enemy) {
-            let sth = ()=>{ return typeof enemy[key] === 'number' ? enemy[key] + Math.floor(this.props.charakter.level/2) : enemy[key]};
-            sth();
-        }*/
+        for ( let key in enemy) {
+              enemy[key] = typeof enemy[key] === 'number' ? enemy[key] + Math.floor(this.props.charakter.level/2) : enemy[key];
+
+        }
 
         this.setState(() => {
             return{
