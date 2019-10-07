@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import playbutton from '../img/icons/playbuttonwhite.png';
 import openbook from '../img/icons/openbookwhite.png';
 import settingsgears from '../img/icons/settingsgearswhite.png';
-import '../css/menuscreen.css';
 import Option from './MenuCoponents/Option';
 
 class MenuScreen extends Component{

@@ -216,6 +216,12 @@ body{
             max-height: 80px;
             margin: 20px;
             vertical-align: middle;
+
+             p:hover{
+                transition: 0.5s;
+                transform: scale(1.1);
+                cursor: pointer;
+            }
         }
         .addstat{
             justify-content: space-between;
@@ -258,6 +264,11 @@ body{
         margin: 20px;
         border-radius: 50%;
         border: 4px solid black;
+        transition: 0.5s;
+        &:hover{
+            transform: scale(1.2);
+            cursor: pointer;
+        }
         img{
         max-width: 50px;
     }
@@ -296,6 +307,17 @@ body{
 
 #enemy_stats{
     text-align: center;
+
+    .stat:hover{
+        transition: 0.5s;
+        transform: scale(1.1);
+    }
+}
+
+#enemy_name:hover, #enemy_image:hover img, #charakter_image:hover img{
+    cursor: pointer;
+    transition: 0.5s;
+        transform: scale(1.1);
 }
 
 @media (min-width: 576px){
@@ -394,4 +416,9 @@ body{
         padding: 0;
     }
 
+}
+
+.addstatistic:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
 }
