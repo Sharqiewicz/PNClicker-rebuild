@@ -58,8 +58,18 @@ class FoeField extends Component {
 
         // copying object - do not rewrite the health of the foe in biom.js list
         if ((this.state.actualfoe.name === biom[foe].name)) { return this.foeDraw() };
-        const enemy = Object.assign({}, biom[foe]);
+        let enemy = Object.assign({}, biom[foe]);
         if (enemy.level > this.props.charakter.level) { return this.foeDraw() }
+
+
+        // musi byc key value bo key to tylko nazwa
+        // musi zwracać
+
+        //broken
+        /*for ( let key in enemy) {
+            let sth = ()=>{ return typeof enemy[key] === 'number' ? enemy[key] + Math.floor(this.props.charakter.level/2) : enemy[key]};
+            sth();
+        }*/
 
         this.setState(() => {
             return{

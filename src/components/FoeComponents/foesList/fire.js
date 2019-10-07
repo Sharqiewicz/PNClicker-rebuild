@@ -1,4 +1,4 @@
-import fire_elemental_child from '../../../img/fire_elemental.png'
+import fire_elemental_child from '../../../img/fire_elemental_child.png'
 import fire_elemental from '../../../img/fire_elemental.png'
 import fire_elemental_2 from '../../../img/fire_elemental_2.png'
 import Flame_Guard from '../../../img/Flame_Guard.png'
@@ -97,7 +97,7 @@ const fireFoes = [
         level: 7,
         //
         name: `Flame King`,
-        damage: 1,
+        damage: 100,
         health: 5,
         //
         bonusdamagebiom: 3,
