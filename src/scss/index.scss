@@ -307,6 +307,17 @@ body{
 
 #enemy_stats{
     text-align: center;
+
+    .stat:hover{
+        transition: 0.5s;
+        transform: scale(1.1);
+    }
+}
+
+#enemy_name:hover, #enemy_image:hover img, #charakter_image:hover img{
+    cursor: pointer;
+    transition: 0.5s;
+        transform: scale(1.1);
 }
 
 @media (min-width: 576px){
