@@ -50,10 +50,22 @@
 ```
 npm install
 ```
-2.
+2. Install node_modules
 
 ```
 npm start
+```
+
+3. Install GIT-LFS ( LARGE FILE STORAGE ) 
+
+```
+git lfs install
+```
+
+4. Pull Images from LFS repository
+
+```
+git lfs pull
 ```
 
 
