@@ -9,7 +9,7 @@ const initState = {
     bonusdamagebiom: 3,
     vulnerabilities: 1,
     biomID: 0,
-    money: 0,
+    money: 110,
     level: 1,
     biomicon: fireicon,
     charakterimg: charakterimg
@@ -54,7 +54,18 @@ const charakter = (state = initState, action) => {
                     ...state, level: state.level + 1, health: state.health + state.level, damage: state.damage + 1, steal: state.steal + 1, money
                 }
             }
+            else if ([actionstat] == 'health') {
+                return {
+                    ...state,
+                    ...state, [actionstat]: many, money
+                }
+            }
             else {
+                if (many > (state.level * 10)) {
+                    return {
+                        ...state
+                    };
+                }
                 return {
                     ...state,
                     ...state, [actionstat]: many, money
