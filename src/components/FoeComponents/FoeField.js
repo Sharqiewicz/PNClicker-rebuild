@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import candyFoes from './foesList/candy'
 import waterFoes from './foesList/water'
 import fireFoes from './foesList/fire'
@@ -7,22 +7,22 @@ import { connect } from 'react-redux';
 
 class FoeField extends Component {
 
-    constructor(){
+    constructor() {
         super();
         this.state = {
             actualfoe: {}
         }
     }
 
-    attack = () =>{
+    attack = () => {
 
         let ch_received_dmg = this.state.actualfoe.damage;
         let enemy_received_dmg = this.props.charakter.damage;
 
-        if( this.state.actualfoe.bonusdamagebiom == this.props.charakter.biomID){
+        if (this.state.actualfoe.bonusdamagebiom == this.props.charakter.biomID) {
             ch_received_dmg = this.state.actualfoe.damage + this.state.actualfoe.level;
         }
-        if( this.props.charakter.bonusdamagebiom == this.state.actualfoe.biomID){
+        if (this.props.charakter.bonusdamagebiom == this.state.actualfoe.biomID) {
             enemy_received_dmg = this.props.charakter.damage + this.props.charakter.level;
         }
 
@@ -54,7 +54,7 @@ class FoeField extends Component {
         this.foeDraw();
     }
 
-    redrawFoe = (biom ,foe) => {
+    redrawFoe = (biom, foe) => {
 
         // copying object - do not rewrite the health of the foe in biom.js list
         if ((this.state.actualfoe.name === biom[foe].name)) { return this.foeDraw() };
@@ -66,13 +66,13 @@ class FoeField extends Component {
         // musi zwracać
 
         //broken
-        for ( let key in enemy) {
-              enemy[key] = typeof enemy[key] === 'number' ? enemy[key] + Math.floor(this.props.charakter.level/2) : enemy[key];
+        for (let key in enemy) {
+            enemy[key] = typeof enemy[key] === 'number' ? enemy[key] + Math.floor(this.props.charakter.level / 2) : enemy[key];
 
         }
 
         this.setState(() => {
-            return{
+            return {
                 ...this.state,
                 actualfoe: enemy
             }
@@ -91,14 +91,14 @@ class FoeField extends Component {
     foeDraw = () => {
         let randomBiom = Math.floor(Math.random() * 4);
 
-        if(randomBiom == this.props.charakter.biomID){ return this.foeDraw() }
+        if (randomBiom == this.props.charakter.biomID) { return this.foeDraw() }
 
         let randomEnemy = 0;
 
-        switch(randomBiom){
+        switch (randomBiom) {
             case 0:
                 randomEnemy = Math.floor(Math.random() * fireFoes.length);
-                this.redrawFoe(fireFoes ,randomEnemy);
+                this.redrawFoe(fireFoes, randomEnemy);
                 break;
             case 1:
                 randomEnemy = Math.floor(Math.random() * waterFoes.length);
@@ -119,24 +119,25 @@ class FoeField extends Component {
 
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className="col-sm-12 col-md-4 my-auto">
                 <div className="FoeField">
                     <div id="enemy_container">
-                        <div id="enemy_image"><img src={this.state.actualfoe.img}/></div>
+                        <div id="enemy_image"><img src={this.state.actualfoe.img} /></div>
                         <div id="attack_button" onClick={this.attack}>ATTACK</div>
                         <div id="enemy_name"> <h3>{this.state.actualfoe.name}</h3></div>
                         <div id="enemy_stats">
                             <div className="stat"> Level: {this.state.actualfoe.level}</div>
                             <div className="stat text-white"> Damage: {this.state.actualfoe.damage} {this.props.charakter.vulnerabilities == this.state.actualfoe.biomID ? `+ ${this.state.actualfoe.level}` : ""}</div>
-                            <div className="stat text-white">Health: {this.state.actualfoe.health }</div>
+                            <div className="stat text-white">Health: {this.state.actualfoe.health}</div>
                             <div className="text-danger">{this.state.actualfoe.vulnerabilities == this.props.charakter.biomID ? `You have bonus + ${this.state.actualfoe.level} DMG ` : ""}</div>
                         </div>
                     </div>
                 </div>
             </div>
-        )};
+        )
+    };
 }
 
 
@@ -155,7 +156,7 @@ const mapStateToProps = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        attack: (damage) => { dispatch({ type: 'TAKE_DAMAGE', damage })}
+        attack: (damage) => { dispatch({ type: 'TAKE_DAMAGE', damage }) }
     }
 }
 
