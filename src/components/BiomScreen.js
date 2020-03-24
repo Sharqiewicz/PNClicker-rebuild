@@ -28,7 +28,7 @@ class BiomScreen extends Component {
     }
 
     playGame = (e) => {
-        let vul = Number(e.target.id) === 3 ? 3 : Number(e.target.id);
+        let vul = Number(e.target.id) == 3 ? 0 : Number(e.target.id) == 0 ? 1 : Number(e.target.id) == 1 ? 2 : Number(e.target.id) == 2 ? 3 : null;
         let bdm = Number(e.target.id) == 0 ? 3 : Number(e.target.id) == 1 ? 0 : Number(e.target.id) == 2 ? 1 : Number(e.target.id) == 3 ? 2 : null;
 
         let biomicons = [fireicon, watericon, slimeicon, candyicon];
