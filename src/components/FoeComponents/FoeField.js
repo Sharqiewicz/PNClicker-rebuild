@@ -60,16 +60,21 @@ class FoeField extends Component {
         if ((this.state.actualfoe.name === biom[foe].name)) { return this.foeDraw() };
         let enemy = Object.assign({}, biom[foe]);
         if (enemy.level > this.props.charakter.level) { return this.foeDraw() }
+        if (enemy.level < this.props.charakter.level) {
+            for (let key in enemy) {
+                if (key === 'level') {
+                    enemy[key] = this.props.charakter.level
+
+                }
+                else {
+                    enemy[key] = typeof enemy[key] === 'number' ? enemy[key] = Number(enemy[key]) + (this.props.charakter.level) : enemy[key];
+                }
+            }
+        }
 
 
         // musi byc key value bo key to tylko nazwa
         // musi zwracać
-
-        //broken
-        for (let key in enemy) {
-            enemy[key] = typeof enemy[key] === 'number' ? enemy[key] + Math.floor(this.props.charakter.level / 2) : enemy[key];
-
-        }
 
         this.setState(() => {
             return {

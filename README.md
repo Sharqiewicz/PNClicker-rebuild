@@ -56,7 +56,7 @@ npm install
 npm start
 ```
 
-3. Install GIT-LFS ( LARGE FILE STORAGE ) 
+3. Install GIT-LFS ( LARGE FILE STORAGE )
 
 ```
 git lfs install
@@ -74,16 +74,5 @@ All images are from Adventure Time cartoon
 Icons - https://www.flaticon.com
 
 
-## To Do
-<ol>
-    <li>InstructionsScreen design and content</li>
-    <li>OptionsScreen</li>
-    <li>Sounds</li>
-    <li>Mobile Version ( RWD )</li>
-    <li>Other Languages to choose ( Polish, French )</li>
-    <li>Game Events</li>
-    <li>Bosses</li>
-    <li>Better design</li>
-    <li>More Foes</li>
-</ol>
+I see that there isn't any design pattern but I don't want to refactor it again, maybe later :)
 
