@@ -14,7 +14,7 @@ function AddHealth(props) {
             <div className="stats">
                 <div className="addstatistic btn btn-success" data-tip="Add +1 to health" onClick={() => { props.stat(props.name, 1, 1) }}>+</div>
                 <input type="number" placeholder="Number" id="hh" onChange={setHealthCount} />
-                <div className="addstatistic btn btn-primary" data-tip="Add +10 to health" onClick={() => { props.stat(props.name, 1, count) }}><ReactTooltip />+</div>
+                <div className="addstatistic btn btn-primary" data-tip="Add how much health you want" onClick={() => { props.stat(props.name, 1, count) }}><ReactTooltip />+</div>
             </div>
         </div >
     )
