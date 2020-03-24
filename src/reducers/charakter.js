@@ -54,7 +54,18 @@ const charakter = (state = initState, action) => {
                     ...state, level: state.level + 1, health: state.health + state.level, damage: state.damage + 1, steal: state.steal + 1, money
                 }
             }
+            else if ([actionstat] == 'health') {
+                return {
+                    ...state,
+                    ...state, [actionstat]: many, money
+                }
+            }
             else {
+                if (many > (state.level * 10)) {
+                    return {
+                        ...state
+                    };
+                }
                 return {
                     ...state,
                     ...state, [actionstat]: many, money
@@ -72,6 +83,8 @@ const charakter = (state = initState, action) => {
     }
 
     if (action.type == 'CHARAKTER_BIOM') {
+        console.log(action)
+        console.log(action.vulnerabilities, action.bonusdamagebiom)
         return {
             ...state,
             ...state, biomID: action.biomID, biomicon: action.biomicon, vulnerabilities: action.vulnerabilities, bonusdamagebiom: action.bonusdamagebiom
