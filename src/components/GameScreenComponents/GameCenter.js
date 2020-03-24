@@ -26,11 +26,11 @@ class GameCenter extends Component {
                 <div id="charakter-img-icon" className="col-5">
                     <img src={`${this.props.biomicon}`} />
                 </div>
-                <Onestat name='Balance' value={this.props.money} stat={this.statfunc} />
-                <AddStat name='Level' value={this.props.level} stat={this.statfunc} />
-                <AddStat name='Damage' value={this.props.damage} stat={this.statfunc} />
+                <Onestat name='Balance' value={this.props.money} stat={this.statfunc} tip="Attack a foe to get money! ( Click on the enemy )" />
+                <AddStat name='Level' value={this.props.level} stat={this.statfunc} tip="Each level allows you to increase you statistics by 10!" />
+                <AddStat name='Damage' value={this.props.damage} stat={this.statfunc} tip="+1 Damage" />
                 <AddHealth name='Health' value={this.props.health} stat={this.statfunc} />
-                <AddStat name='Steal' value={this.props.steal} stat={this.statfunc} />
+                <AddStat name='Steal' value={this.props.steal} stat={this.statfunc} tip="Increase you income +1" />
             </div>
         )
     }

@@ -9,7 +9,7 @@ const initState = {
     bonusdamagebiom: 3,
     vulnerabilities: 1,
     biomID: 0,
-    money: 110,
+    money: 0,
     level: 1,
     biomicon: fireicon,
     charakterimg: charakterimg
