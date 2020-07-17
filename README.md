@@ -5,7 +5,7 @@
 ---
 
 ## Hosting
-link to the project: https://innerpolish.netlify.app/
+link to the project: https://pnclicker.netlify.app/
 
 ---
 
@@ -104,7 +104,7 @@ I see that there isn't any design pattern but I don't want to refactor it again,
 
 ## Author Info
 
-- 2019 -
+- - 2019 -
 
 - Facebook - [Kacper Szarkiewicz](https://www.facebook.com/SharqizSCI/)
 - Website - [Kacper Szarkiewicz](sharqi.netlify.app)
