@@ -3,7 +3,7 @@ import Onestat from './Onestat';
 import AddStat from './AddStat';
 import AddHealth from './AddHealth';
 import { connect } from 'react-redux';
-import icon from '../../img/icons/fire.png';
+import { FaHandHoldingUsd, FaHandRock, FaShieldAlt, FaHeart } from 'react-icons/fa';
 
 class GameCenter extends Component {
 

@@ -1,3 +1,26 @@
+# PnClicker
+
+![Project Image](https://github.com/Sharqiewicz/PNClicker-rebuild/blob/master/pnclickerscreen.png)
+
+---
+
+## Hosting
+link to the project: https://innerpolish.netlify.app/
+
+---
+
+## Description
+
+
+#### Technologies
+
+* [React]
+* [Redux]
+* [SASS]
+* [Bootstrap]
+* [GIT]
+
+
 # PnClicker is a clicker game based on React and Redux.
 
  This is my first touch with these technolgies, so they might be better
@@ -68,6 +91,7 @@ git lfs install
 git lfs pull
 ```
 
+---
 
 ## Images and icons
 All images are from Adventure Time cartoon
@@ -76,3 +100,13 @@ Icons - https://www.flaticon.com
 
 I see that there isn't any design pattern but I don't want to refactor it again, maybe later :)
 
+---
+
+## Author Info
+
+- 2019 -
+
+- Facebook - [Kacper Szarkiewicz](https://www.facebook.com/SharqizSCI/)
+- Website - [Kacper Szarkiewicz](sharqi.netlify.app)
+
+---

@@ -418,6 +418,7 @@ body {
   height: 100vh;
   background: #111;
   padding: 5%;
+  color: white;
 }
 
 #InstructionsScreen p, #OptionsScreen p {
@@ -428,7 +429,13 @@ body {
   cursor: pointer;
   -webkit-transition: 0.6s;
   transition: 0.6s;
-  font-size: 24px;
+  font-size: 18px;
+}
+
+#InstructionsScreen .spin, #OptionsScreen .spin {
+  font-size: 128px;
+  -webkit-animation: spin 2s infinite linear;
+          animation: spin 2s infinite linear;
 }
 
 #enemy_stats {
@@ -588,5 +595,62 @@ body {
 #hh {
   max-width: 100px;
   font-size: 18px;
+}
+
+.blink {
+  -webkit-animation: blink 2s infinite linear;
+          animation: blink 2s infinite linear;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes blink {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 /*# sourceMappingURL=index.css.map */

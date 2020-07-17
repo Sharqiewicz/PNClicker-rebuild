@@ -294,6 +294,7 @@ body{
     height: 100vh;
     background: #111;
     padding: 5%;
+    color: white;
 
     p{
         margin: 20px !important;
@@ -301,7 +302,11 @@ body{
     p:hover{
         cursor: pointer;
         transition: 0.6s;
-        font-size: 24px;
+        font-size: 18px;
+    }
+    .spin{
+        font-size: 128px;
+        animation: spin 2s infinite linear;
     }
 }
 
@@ -426,4 +431,25 @@ body{
 #hh{
  max-width: 100px;
  font-size: 18px;
+}
+
+.blink{
+    animation: blink 2s infinite linear;
+}
+
+@keyframes blink{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
 }
